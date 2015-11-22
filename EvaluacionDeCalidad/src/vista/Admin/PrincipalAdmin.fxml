@@ -16,8 +16,8 @@
       <Button fx:id="Gasignatura" layoutX="247.0" layoutY="273.0" mnemonicParsing="false" onAction="#accionGasignatura" prefHeight="70.0" prefWidth="200.0" text="Asignatura" />
       <Button fx:id="Gencusta" layoutX="664.0" layoutY="273.0" mnemonicParsing="false" onAction="#AccionGencuesta" prefHeight="70.0" prefWidth="200.0" text="Encuesta" />
       <Button fx:id="Gbloque" layoutX="37.0" layoutY="353.0" mnemonicParsing="false" onAction="#AccionGbloque" prefHeight="70.0" prefWidth="200.0" text="Bloque" />
-      <Button fx:id="GenInforme" disable="true" layoutX="456.0" layoutY="435.0" mnemonicParsing="false" onAction="#AccionGenInforme" prefHeight="70.0" prefWidth="200.0" text="Informe" />
-      <Button fx:id="CargPlano" disable="true" layoutX="247.0" layoutY="516.0" mnemonicParsing="false" onAction="#AccionCargPlano" prefHeight="70.0" prefWidth="200.0" text=" Archivo Plano" AnchorPane.rightAnchor="453.0" />
+      <Button fx:id="GenInforme" layoutX="456.0" layoutY="435.0" mnemonicParsing="false" onAction="#AccionGenInforme" prefHeight="70.0" prefWidth="200.0" text="Informe" />
+      <Button fx:id="CargPlano" layoutX="247.0" layoutY="516.0" mnemonicParsing="false" onAction="#AccionCargPlano" prefHeight="70.0" prefWidth="200.0" text=" Archivo Plano" AnchorPane.rightAnchor="453.0" />
       <Button fx:id="Csesion" layoutX="664.0" layoutY="516.0" mnemonicParsing="false" onAction="#AccionCsesion" prefHeight="70.0" prefWidth="200.0" text="Cerrar Sesion" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="36.0" />
       <Button fx:id="Gpregunta" layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#accionGpregunta" prefHeight="70.0" prefWidth="200.0" text=" Pregunta" />
       <Button fx:id="acercade" layoutX="37.0" layoutY="516.0" mnemonicParsing="false" onAction="#AccionaMacercade" prefHeight="70.0" prefWidth="200.0" text="Acerca" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="37.0" />
@@ -25,7 +25,7 @@
          <font>
             <Font name="Segoe UI Symbol" size="12.0" />
          </font></Button>
-      <Button fx:id="Abloque" disable="true" layoutX="664.0" layoutY="353.0" mnemonicParsing="false" onAction="#accionAbloque" prefHeight="70.0" prefWidth="200.0" text="  Asignar Bloque" />
+      <Button fx:id="Abloque" layoutX="664.0" layoutY="353.0" mnemonicParsing="false" onAction="#accionAbloque" prefHeight="70.0" prefWidth="200.0" text="  Asignar Bloque" />
       <Button fx:id="Apregunta" disable="true" layoutX="37.0" layoutY="435.0" mnemonicParsing="false" onAction="#accionApregunta" prefHeight="70.0" prefWidth="200.0" text="  Asignar Pregunta" AnchorPane.rightAnchor="663.0">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic></Button>
       <Button fx:id="Aasignatura" layoutX="456.0" layoutY="354.0" mnemonicParsing="false" onAction="#accionAasignatura" prefHeight="70.0" prefWidth="200.0" text="       Asignar Asignatura" AnchorPane.leftAnchor="456.0" />
-      <Button fx:id="Aencuesta" disable="true" layoutX="247.0" layoutY="435.0" mnemonicParsing="false" onAction="#accionAencuesta" prefHeight="70.0" prefWidth="200.0" text="     Asignar Encuesta" />
+      <Button fx:id="Aencuesta" layoutX="247.0" layoutY="435.0" mnemonicParsing="false" onAction="#accionAencuesta" prefHeight="70.0" prefWidth="200.0" text="     Asignar Encuesta" />
       <Button fx:id="Aestudiante" disable="true" layoutX="664.0" layoutY="435.0" mnemonicParsing="false" onAction="#AccionAestudiante" prefHeight="70.0" prefWidth="200.0" text="     Asignar Estudiante" />
       <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="258.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
          <image>

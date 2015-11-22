@@ -90,12 +90,14 @@ public class PrincipalAdminController implements Initializable {
     
     @FXML
     public void AccionCargPlano(ActionEvent event) {
-        String ruta = "Admin/ArchivoPlano.fxml";
+        String ruta = "Admin/Menu/CargarArchivoPlano.fxml";
         new Activo().cambioBorder(event,ruta);
     }
     
     @FXML
     public void AccionGenInforme(ActionEvent event) {
+        String ruta = "Admin/Menu/GenerarInforme.fxml";
+        new Activo().cambioBorder(event,ruta);
     }
     
     @FXML
@@ -108,74 +110,73 @@ public class PrincipalAdminController implements Initializable {
 
     @FXML
     private void AccionGusuario(ActionEvent event) {
-        String ruta = "Admin/User.fxml";
+        String ruta = "Admin/Menu/GestionUsuario.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void accionGasignatura(ActionEvent event) {
-        String ruta = "Admin/Asignatura.fxml";
+        String ruta = "Admin/Menu/GestionAsignatura.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void AccionGencuesta(ActionEvent event) {
-        String ruta = "Admin/Encuesta.fxml";
+        String ruta = "Admin/Menu/GestionEncuesta.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void AccionGbloque(ActionEvent event) {
-        String ruta = "Admin/Bloque.fxml";
+        String ruta = "Admin/Menu/GestionBloque.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void AccionCsesion(ActionEvent event) {
-        
         String ruta = "IniciarSesion.fxml";
         new Activo().cambioAnchor(event,ruta);
     }
 
     @FXML
     private void accionGpregunta(ActionEvent event) {
-        String ruta = "Admin/Pregunta.fxml";
+        String ruta = "Admin/Menu/GestionPregunta.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void accionGdocente(ActionEvent event) {
-        String ruta = "Admin/Docente.fxml";
+        String ruta = "Admin/Menu/GestionDocente.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void accionAbloque(ActionEvent event) {
-        String ruta = "Admin/AsignarBloquexencuesta.fxml";
+        String ruta = "Admin/Menu/AsignarBloque.fxml";
         new Activo().cambioAnchor(event, ruta);
     }
 
     @FXML
     private void accionApregunta(ActionEvent event) {
-        String ruta = "Admin/AsignarPregunta.fxml";
+        String ruta = "Admin/Menu/AsignarPregunta.fxml";
         new Activo().cambioBorder(event, ruta);
     }
 
     @FXML
     private void accionAasignatura(ActionEvent event) {
-        String ruta = "Admin/AsignarDocente.fxml";
+        String ruta = "Admin/Menu/AsignarDocente.fxml";
         new Activo().cambioBorder(event,ruta);   
     }
     
     @FXML
     private void accionAencuesta(ActionEvent event){
-        String ruta = "Admin/AsignarEncuesta.fxml";
+        String ruta = "Admin/Menu/AsignarEncuesta.fxml";
         new Activo().cambioBorder(event,ruta);
     }
 
     @FXML
     private void AccionAestudiante(ActionEvent event) {
-        String ruta = "Admin/AsignarEstudiante.fxml";
+        String ruta = "Admin/Menu/AsignarEstudiante.fxml";
         new Activo().cambioBorder(event,ruta);
     }
     

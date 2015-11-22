@@ -19,7 +19,7 @@
          <graphic>
             <ImageView fitHeight="43.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../imagenes/regresar.png" />
+                  <Image url="@../../../imagenes/regresar.png" />
                </image>
             </ImageView>
          </graphic></Button>

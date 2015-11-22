@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="BorderPane" prefHeight="625.0" prefWidth="950.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane id="BorderPane" prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
     <left><fx:include source="Menu.fxml" /></left>
-    <center><fx:include source="GestionAsignatura.fxml" /></center>
+    <center><fx:include source="../GestionDocente.fxml" /></center>    
 </BorderPane>

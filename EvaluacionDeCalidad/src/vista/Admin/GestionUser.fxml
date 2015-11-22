@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import Validaciones.* ?>
+
+<AnchorPane id="AnchorPane" prefHeight="512.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionUserController">
+   <children>
+      <ImageView fitHeight="62.0" fitWidth="440.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="533.0" layoutY="15.0" text="Gestion Usuario">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id="usuariotb" layoutX="6.0" layoutY="87.0" onMouseClicked="#Seleccionarusuario" prefHeight="400.0" prefWidth="544.0" />
+      <ValidarNumeros fx:id="codigotf" layoutX="693.0" layoutY="102.0" promptText="Codigo" />
+      <ValidarTexto fx:id="nombretf" layoutX="693.0" layoutY="137.0" promptText="Nombre" />
+      <ValidarTexto fx:id="apellidotf" layoutX="693.0" layoutY="175.0" promptText="Apellido" />
+      <PasswordField fx:id="contrasenatf" layoutX="693.0" layoutY="213.0" promptText="Contraseña" />
+      <TextField fx:id="emailtf" layoutX="693.0" layoutY="247.0" promptText="Email" />
+      <ValidarNumeros fx:id="telefonotf" layoutX="693.0" layoutY="284.0" promptText="Telefono" />
+      <TextField fx:id="direciontf" layoutX="693.0" layoutY="324.0" promptText="Direccion" />
+      <Label layoutX="620.0" layoutY="104.0" text="Codigo* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="615.0" layoutY="139.0" text="Nombre* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="614.0" layoutY="177.0" text="Apellido* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="613.0" layoutY="286.0" text="Telefono :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="634.0" layoutY="249.0" text="Email* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="594.0" layoutY="215.0" text="Contraseña* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="611.0" layoutY="326.0" text="Direccion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="crearbt" layoutX="565.0" layoutY="462.0" mnemonicParsing="false" onAction="#Crearusuario" prefHeight="25.0" prefWidth="67.0" text="Crear" />
+      <Button fx:id="modificarbt" layoutX="649.0" layoutY="462.0" mnemonicParsing="false" onAction="#Modificarusuario" text="Modificar" />
+      <Button fx:id="consultarbt" layoutX="732.0" layoutY="462.0" mnemonicParsing="false" onAction="#Consultarusuario" text="Consultar" />
+      <ComboBox fx:id="tipocb" layoutX="693.0" layoutY="380.0" prefWidth="150.0" promptText="Tipo Usuario*" />
+      <Label fx:id="mensajelb" layoutX="571.0" layoutY="439.0" text="Lo Datos Marcados Con * Son Obligatorios" textFill="RED" visible="false" />
+      <Label fx:id="mensaje2lb" layoutX="571.0" layoutY="422.0" text="El Usuario Que Se Desea Crear Ya Existe" textFill="RED" visible="false" />
+      <Button fx:id="limpiarbt" layoutX="813.0" layoutY="462.0" mnemonicParsing="false" onAction="#Limpiardatos" text="Limpiar" />
+   </children>
+</AnchorPane>

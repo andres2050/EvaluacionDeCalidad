@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="fondo" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Estudiante.PrincipalUsuarioController">
+   <children>
+      <ImageView fitHeight="135.0" fitWidth="506.0" layoutX="3.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="209.0" layoutY="64.0" prefHeight="70.0" prefWidth="494.0" text="Presione Click Sobre la Materia A Evaluar:" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="9.0">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="Materia1" alignment="CENTER" layoutX="14.0" layoutY="134.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia1" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia2" alignment="CENTER" layoutX="14.0" layoutY="194.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia2" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia3" alignment="CENTER" layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia3" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia4" alignment="CENTER" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia4" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia5" alignment="CENTER" layoutX="14.0" layoutY="374.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia5" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia6" alignment="CENTER" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia6" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia7" alignment="CENTER" layoutX="14.0" layoutY="494.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia7" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Materia8" alignment="CENTER" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#AccionCalificar" prefHeight="60.0" text="Materia8" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="Espacio" layoutX="348.0" layoutY="634.0" text="Label" />
+   </children>
+</AnchorPane>

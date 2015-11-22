@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="773.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Estudiante.EvaluacionController">
+   <children>
+      <ImageView fitHeight="57.0" fitWidth="389.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="evaluacion" layoutX="396.0" layoutY="2.0" text="Evaluacion">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="fecha" layoutX="14.0" layoutY="80.0" text="Fecha: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="asignatura" layoutX="250.0" layoutY="80.0" text="Asignatura:  ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="grupo" layoutX="577.0" layoutY="124.0" text="Grupo: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="profesor" layoutX="14.0" layoutY="124.0" text="Profesor: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablabloques" layoutX="22.0" layoutY="174.0" prefHeight="374.0" prefWidth="738.0" />
+      <Button fx:id="siguientebt" layoutX="695.0" layoutY="558.0" mnemonicParsing="false" onAction="#AccionSiguiente" text="Siguiente" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GenerarInformeController">
+   <children>
+      <ImageView fitHeight="76.0" fitWidth="393.0" layoutX="25.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="32.0">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="537.0" layoutY="53.0" text="Generar Reporte">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="profesor" layoutX="93.0" layoutY="238.0" onAction="#CargaPorProfesor" prefWidth="150.0" promptText="Profesor" />
+      <ComboBox fx:id="asignatura" disable="true" layoutX="322.0" layoutY="238.0" onAction="#CargarPorAsignatura" prefWidth="150.0" promptText="Asignatura" />
+      <ComboBox fx:id="grupo" disable="true" layoutX="593.0" layoutY="238.0" prefWidth="150.0" promptText="Grupo" />
+      <Button layoutX="353.0" layoutY="324.0" mnemonicParsing="false" onAction="#AccionGenerar" text="Generar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,2382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EvaluacionDeCalidad">
+  <ClassDiagramComponents>
+    <Class name="AsignarAsignaturaDocenteController" package="control.Admin" visibility="public" xPosition="13.0" yPosition="11.0">
+      <Fields>
+        <Field name="aasignar" type="AnchorPane" visibility="private"/>
+        <Field name="generard" type="Button" visibility="private"/>
+        <Field name="generara" type="Button" visibility="private"/>
+        <Field name="asignar" type="Button" visibility="private"/>
+        <Field name="cupo" type="TextField" visibility="private"/>
+        <Field name="grupo" type="ComboBox&lt;Integer&gt;" visibility="private"/>
+        <Field name="asignatura" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="profesor" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="resultsgrupo" type="List&lt;Tbgrupo&gt;" visibility="package"/>
+        <Field name="resultsasignatura" type="List&lt;Tbasignatura&gt;" visibility="package"/>
+        <Field name="resultsprofesor" type="List&lt;Tbprofesor&gt;" visibility="package"/>
+        <Field name="results" type="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="package"/>
+        <Field name="tablaasignatura" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbprofesor" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="prefesor" type="Tbprofesor" visibility="package"/>
+        <Field name="profesorbd" type="TbprofesorJpaController" visibility="package"/>
+        <Field name="tbasignatura" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="gpabd" type="TbgrupoxasignaturaxprofesorJpaController" visibility="package"/>
+        <Field name="gpa" type="Tbgrupoxasignaturaxprofesor" visibility="package"/>
+        <Field name="materiabd" type="TbasignaturaJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="public"/>
+        <Method name="generard" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="generara" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="asignar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarcombogrupo" returnType="void" visibility="public"/>
+        <Method name="cargarcomboprofesor" returnType="void" visibility="public"/>
+        <Method name="cargarcomboasignatura" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AsignarBloqueEncuestaController" package="control.Admin" visibility="public" xPosition="333.0" yPosition="11.0">
+      <Fields>
+        <Field name="asignarbt" type="Button" visibility="private"/>
+        <Field name="tablaencuesta" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="cencuesta" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="cbloque" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="tbencuesta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="encuesta" type="ComboBox&lt;?&gt;" visibility="package"/>
+        <Field name="encuestabd" type="TbencuestaJpaController" visibility="package"/>
+        <Field name="tbbloque" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="bloque" type="ComboBox&lt;?&gt;" visibility="package"/>
+        <Field name="bloquebd" type="TbbloqueJpaController" visibility="package"/>
+        <Field name="bxq" type="Tbbloquesxencuesta" visibility="package"/>
+        <Field name="bxebd" type="TbbloquesxencuestaJpaController" visibility="package"/>
+        <Field name="tbbloquexencuesta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+        <Field name="results" type="List&lt;Tbbloquesxencuesta&gt;" visibility="package"/>
+        <Field name="resultencuesta" type="List&lt;Tbencuesta&gt;" visibility="package"/>
+        <Field name="resultbloque" type="List&lt;Tbbloque&gt;" visibility="package"/>
+        <Field name="encuestatabt" type="Button" visibility="private"/>
+        <Field name="bloquebt" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generarb" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="generare" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="asignar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarcomboencuesta" returnType="void" visibility="public"/>
+        <Method name="cargarcombobloque" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="seleccionarencuesta" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="genarare" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="genararb" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AsignarEncuestaAsignaturaController" package="control.Admin" visibility="public" xPosition="667.0" yPosition="11.0">
+      <Fields>
+        <Field name="asignarbt" type="Button" visibility="private"/>
+        <Field name="asignaturabt" type="Button" visibility="private"/>
+        <Field name="encuestabt" type="Button" visibility="private"/>
+        <Field name="tablaencuesta" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbencuesta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="tbasignatura" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="tbencuestaxasignatura" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="gpa" type="Tbgrupoxasignaturaxprofesor" visibility="package"/>
+        <Field name="gpabd" type="TbgrupoxasignaturaxprofesorJpaController" visibility="package"/>
+        <Field name="resultasignatura" type="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="package"/>
+        <Field name="encuesta" type="ComboBox&lt;String&gt;" visibility="package"/>
+        <Field name="encuestabd" type="TbencuestaJpaController" visibility="package"/>
+        <Field name="resultencuesta" type="List&lt;Tbencuesta&gt;" visibility="package"/>
+        <Field name="exa" type="Tbencuestaxasignatura" visibility="package"/>
+        <Field name="exabd" type="TbencuestaxasignaturaJpaController" visibility="package"/>
+        <Field name="results" type="List&lt;Tbencuestaxasignatura&gt;" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+        <Field name="asignatura" type="ComboBox&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generara" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="generare" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="asignar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarcomboencuesta" returnType="void" visibility="public"/>
+        <Method name="cargarcomboasignatura" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="seleccionarencuesta" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="genarara" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AsignarEstudianteAsignaturaController" package="control.Admin" visibility="public" xPosition="1023.0" yPosition="11.0">
+      <Fields>
+        <Field name="tablaasignatura" type="TableView" visibility="private"/>
+        <Field name="estudiante" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="asignatura" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="usuario" type="List&lt;Tbusuario&gt;" visibility="package"/>
+        <Field name="materias" type="List&lt;Tbasignatura&gt;" visibility="package"/>
+        <Field name="usuxmat" type="List&lt;Tbencuestasxusuario&gt;" visibility="package"/>
+        <Field name="usuariobd" type="TbusuarioJpaController" visibility="package"/>
+        <Field name="materiasbd" type="TbasignaturaJpaController" visibility="package"/>
+        <Field name="usuxmatbd" type="TbencuestasxusuarioJpaController" visibility="package"/>
+        <Field name="titulo" type="TableColumn" visibility="package"/>
+        <Field name="tbasignatura" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionEstudiante" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="Asignar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarE" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarA" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="Cargar" returnType="void" visibility="private"/>
+        <Method name="CargarTabla" returnType="void" visibility="private"/>
+        <Method name="LlenarEstudiante" returnType="void" visibility="private"/>
+        <Method name="Llenarasignatura" returnType="void" visibility="private">
+          <Argument type="String" name="comparar"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AsignarPreguntaBloqueController" package="control.Admin" visibility="public" xPosition="1330.0" yPosition="11.0">
+      <Fields>
+        <Field name="preguntabt" type="Button" visibility="private"/>
+        <Field name="bloquebt" type="Button" visibility="private"/>
+        <Field name="asignarbt" type="Button" visibility="private"/>
+        <Field name="bloque" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="pregunta" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="resultsbloque" type="List&lt;Tbbloque&gt;" visibility="package"/>
+        <Field name="resultspregunta" type="List&lt;Tbpregunta&gt;" visibility="package"/>
+        <Field name="resultsbloqxpreg" type="List&lt;Tbbloquesxpregunta&gt;" visibility="package"/>
+        <Field name="tablabloque" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbpregunta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="preguntabd" type="TbpreguntaJpaController" visibility="package"/>
+        <Field name="tbbloque" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="bloquebd" type="TbbloqueJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+        <Field name="Tbbloquesxpregunta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="bloqxpre" type="Tbbloquesxpregunta" visibility="package"/>
+        <Field name="bloqxpregbd" type="TbbloquesxpreguntaJpaController" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="asignar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="genararb" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="genararp" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionarencuesta" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="Cargar" returnType="void" visibility="private"/>
+        <Method name="CargarTabla" returnType="void" visibility="private"/>
+        <Method name="CargarComboBloq" returnType="void" visibility="private"/>
+        <Method name="CargarComboPreg" returnType="void" visibility="private"/>
+        <Method name="AccionBloque" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="CargarArchivoPlanoController" package="control.Admin" visibility="public" xPosition="1675.0" yPosition="11.0">
+      <Fields>
+        <Field name="Cargar" type="Button" visibility="private"/>
+        <Field name="explorador" type="FileChooser" visibility="package"/>
+        <Field name="ruta" type="TextField" visibility="private"/>
+        <Field name="Examinar" type="Button" visibility="private"/>
+        <Field name="archivo" type="File" visibility="package"/>
+        <Field name="desktop" type="Desktop" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionExaminar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionCargar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="openFile" returnType="void" visibility="private">
+          <Argument type="File" name="archivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GenerarInformeController" package="control.Admin" visibility="public" xPosition="1962.0" yPosition="11.0">
+      <Fields>
+        <Field name="profesor" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="asignatura" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="grupo" type="ComboBox&lt;Integer&gt;" visibility="private"/>
+        <Field name="results" type="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="CargaPorProfesor" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="CargarPorAsignatura" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionGenerar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionAsignaturaController" package="control.Admin" visibility="public" xPosition="2289.0" yPosition="11.0">
+      <Fields>
+        <Field name="crear" type="Button" visibility="private"/>
+        <Field name="modificar" type="Button" visibility="private"/>
+        <Field name="consultar" type="Button" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="codigo" type="TextField" visibility="private"/>
+        <Field name="nombre" type="TextField" visibility="private"/>
+        <Field name="fechac" type="TextField" visibility="private"/>
+        <Field name="fecham" type="TextField" visibility="private"/>
+        <Field name="tablamateria" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbmateria" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="asignatura" type="Tbasignatura" visibility="package"/>
+        <Field name="asignaturabd" type="TbasignaturaJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crear" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="consultar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionBloqueController" package="control.Admin" visibility="public" xPosition="13.0" yPosition="721.0">
+      <Fields>
+        <Field name="anadirbt" type="Button" visibility="private"/>
+        <Field name="tablabloques" type="TableView" visibility="private"/>
+        <Field name="numerotf" type="TextField" visibility="private"/>
+        <Field name="bloquetf" type="TextField" visibility="private"/>
+        <Field name="modificarbt" type="Button" visibility="private"/>
+        <Field name="eliminarbt" type="Button" visibility="private"/>
+        <Field name="nuevobt" type="Button" visibility="private"/>
+        <Field name="consultarbt" type="Button" visibility="private"/>
+        <Field name="limpiarbt" type="Button" visibility="private"/>
+        <Field name="fechactf" type="TextField" visibility="private"/>
+        <Field name="fechamtf" type="TextField" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="tbbloque" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="bloque" type="Tbbloque" visibility="package"/>
+        <Field name="bloquebd" type="TbbloqueJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="anadir" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="consultar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="GestionDocenteController" package="control.Admin" visibility="public" xPosition="333.0" yPosition="721.0">
+      <Fields>
+        <Field name="crearbt" type="Button" visibility="private"/>
+        <Field name="modificarbt" type="Button" visibility="private"/>
+        <Field name="consultarbt" type="Button" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="nombretf" type="TextField" visibility="private"/>
+        <Field name="apellidotf" type="TextField" visibility="private"/>
+        <Field name="codigotf" type="TextField" visibility="private"/>
+        <Field name="telefonotf" type="TextField" visibility="private"/>
+        <Field name="emailtf" type="TextField" visibility="private"/>
+        <Field name="direcciontf" type="TextField" visibility="private"/>
+        <Field name="tabladocente" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbprofesor" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="prefesor" type="Tbprofesor" visibility="package"/>
+        <Field name="profesorbd" type="TbprofesorJpaController" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crear" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="consultar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionEncuestaController" package="control.Admin" visibility="public" xPosition="667.0" yPosition="721.0">
+      <Fields>
+        <Field name="aniadirbt" type="Button" visibility="private"/>
+        <Field name="modificarbt" type="Button" visibility="private"/>
+        <Field name="consultarbt" type="Button" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="numerotf" type="TextField" visibility="private"/>
+        <Field name="nombretf" type="TextField" visibility="private"/>
+        <Field name="fechactf" type="TextField" visibility="private"/>
+        <Field name="fechamtf" type="TextField" visibility="private"/>
+        <Field name="tablaencuesta" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbencuesta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="encuesta" type="Tbencuesta" visibility="package"/>
+        <Field name="encuestabd" type="TbencuestaJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="anadir" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="consultar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionPreguntaController" package="control.Admin" visibility="public" xPosition="1023.0" yPosition="497.0">
+      <Fields>
+        <Field name="aniadirbt" type="Button" visibility="private"/>
+        <Field name="modificarbt" type="Button" visibility="private"/>
+        <Field name="eliminarbt" type="Button" visibility="private"/>
+        <Field name="consultarbt" type="Button" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="numerotf" type="TextField" visibility="private"/>
+        <Field name="preguntatf" type="TextField" visibility="private"/>
+        <Field name="fechactf" type="TextField" visibility="private"/>
+        <Field name="fechamtf" type="TextField" visibility="private"/>
+        <Field name="tablapreguntas" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbpregunta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="pregunta" type="Tbpregunta" visibility="package"/>
+        <Field name="preguntabd" type="TbpreguntaJpaController" visibility="package"/>
+        <Field name="fecha" type="Date" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="anadir" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="consultar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GestionUserController" package="control.Admin" visibility="public" xPosition="1330.0" yPosition="683.0">
+      <Fields>
+        <Field name="crear" type="Button" visibility="private"/>
+        <Field name="modificar" type="Button" visibility="private"/>
+        <Field name="consultar" type="Button" visibility="private"/>
+        <Field name="limpiar" type="Button" visibility="private"/>
+        <Field name="codigo" type="TextField" visibility="private"/>
+        <Field name="nombre" type="TextField" visibility="private"/>
+        <Field name="apellido" type="TextField" visibility="private"/>
+        <Field name="contrasena" type="TextField" visibility="private"/>
+        <Field name="email" type="TextField" visibility="private"/>
+        <Field name="tel" type="TextField" visibility="private"/>
+        <Field name="dir" type="TextField" visibility="private"/>
+        <Field name="tipo" type="ComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="mensaje" type="Label" visibility="private"/>
+        <Field name="mensaje2" type="Label" visibility="private"/>
+        <Field name="tablauser" type="TableView" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="results" type="List&lt;Tbtipo&gt;" visibility="package"/>
+        <Field name="tbusuario" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="usuario" type="Tbusuario" visibility="package"/>
+        <Field name="userbd" type="TbusuarioJpaController" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crear" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="seleccionar" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="consultar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuController" package="control.Admin" visibility="public" xPosition="1675.0" yPosition="299.0">
+      <Fields>
+        <Field name="Regresar" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionRegresar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PrincipalAdminController" package="control.Admin" visibility="public" xPosition="1675.0" yPosition="459.0">
+      <Fields>
+        <Field name="MenuPrincipal" type="AnchorPane" visibility="private"/>
+        <Field name="CargPlano" type="Button" visibility="private"/>
+        <Field name="GenInforme" type="Button" visibility="private"/>
+        <Field name="acercade" type="Button" visibility="private"/>
+        <Field name="Gusuario" type="Button" visibility="private"/>
+        <Field name="Gasignatura" type="Button" visibility="private"/>
+        <Field name="Gencusta" type="Button" visibility="private"/>
+        <Field name="Gbloque" type="Button" visibility="private"/>
+        <Field name="Csesion" type="Button" visibility="private"/>
+        <Field name="Gpregunta" type="Button" visibility="private"/>
+        <Field name="Gdocente" type="Button" visibility="private"/>
+        <Field name="Abloque" type="Button" visibility="private"/>
+        <Field name="Apregunta" type="Button" visibility="private"/>
+        <Field name="Aasignatura" type="Button" visibility="private"/>
+        <Field name="Aencuesta" type="Button" visibility="private"/>
+        <Field name="Aestudiante" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionCargPlano" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionGenInforme" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionaMacercade" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionGusuario" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionGasignatura" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionGencuesta" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionGbloque" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionCsesion" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionGpregunta" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionGdocente" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionAbloque" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionApregunta" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionAasignatura" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="accionAencuesta" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="AccionAestudiante" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EvaluacionController" package="control.Estudiante" visibility="public" xPosition="1962.0" yPosition="268.0">
+      <Fields>
+        <Field name="seleccion" type="Tbencuestasxusuario" visibility="package"/>
+        <Field name="c" type="Calendar" visibility="package"/>
+        <Field name="d" type="Date" visibility="package"/>
+        <Field name="evaluacion" type="Label" visibility="private"/>
+        <Field name="fecha" type="Label" visibility="private"/>
+        <Field name="asignatura" type="Label" visibility="private"/>
+        <Field name="grupo" type="Label" visibility="private"/>
+        <Field name="profesor" type="Label" visibility="private"/>
+        <Field name="titulo" type="TableColumn" visibility="private"/>
+        <Field name="tbpregunta" type="ObservableList&lt;ObservableList&gt;" visibility="package"/>
+        <Field name="df1" type="DateFormat" visibility="package"/>
+        <Field name="tablabloques" type="TableView" visibility="private"/>
+        <Field name="siguientebt" type="Button" visibility="private"/>
+        <Field name="bloqxencu" type="List&lt;Tbbloquesxencuesta&gt;" visibility="package"/>
+        <Field name="bloqxpreg" type="List&lt;Tbbloquesxpregunta&gt;" visibility="package"/>
+        <Field name="encuxasig" type="List&lt;Tbencuestaxasignatura&gt;" visibility="package"/>
+        <Field name="bloqxencubd" type="TbbloquesxencuestaJpaController" visibility="package"/>
+        <Field name="bloqxpregbd" type="TbbloquesxpreguntaJpaController" visibility="package"/>
+        <Field name="encuxasigbd" type="TbencuestaxasignaturaJpaController" visibility="package"/>
+        <Field name="filtrado" type="Tbbloquesxencuesta[]" visibility="package"/>
+        <Field name="bloqueActivo" type="int" visibility="package"/>
+        <Field name="respu" type="Vector" visibility="private"/>
+        <Field name="Cantidad" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="cargarDatosTabla" returnType="void" visibility="private"/>
+        <Method name="cargar" returnType="void" visibility="private"/>
+        <Method name="AccionSiguiente" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="Coincidencia" returnType="void" visibility="private">
+          <Argument type="Respuestas" name="Pregunta"/>
+        </Method>
+        <Method name="Comprobante" returnType="Boolean" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="PrincipalUsuarioController" package="control.Estudiante" visibility="public" xPosition="13.0" yPosition="1315.0">
+      <Fields>
+        <Field name="Materia1" type="Button" visibility="private"/>
+        <Field name="Materia2" type="Button" visibility="private"/>
+        <Field name="Materia3" type="Button" visibility="private"/>
+        <Field name="Materia4" type="Button" visibility="private"/>
+        <Field name="Materia5" type="Button" visibility="private"/>
+        <Field name="Materia6" type="Button" visibility="private"/>
+        <Field name="Materia7" type="Button" visibility="private"/>
+        <Field name="Materia8" type="Button" visibility="private"/>
+        <Field name="results" type="List&lt;Tbencuestasxusuario&gt;" visibility="private"/>
+        <Field name="Espacio" type="Label" visibility="private"/>
+        <Field name="fondo" type="AnchorPane" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionCalificar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Respuestas" package="control.Estudiante" visibility="public" xPosition="333.0" yPosition="1264.0">
+      <Fields>
+        <Field name="Grupo" type="String" visibility="package"/>
+        <Field name="pregunta" type="String" visibility="package"/>
+        <Field name="respuesta" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Grupo"/>
+          <Argument type="String" name="pregunta"/>
+          <Argument type="int" name="respuesta"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getGrupo" returnType="String" visibility="public"/>
+        <Method name="setGrupo" returnType="void" visibility="public">
+          <Argument type="String" name="Grupo"/>
+        </Method>
+        <Method name="getPregunta" returnType="String" visibility="public"/>
+        <Method name="setPregunta" returnType="void" visibility="public">
+          <Argument type="String" name="pregunta"/>
+        </Method>
+        <Method name="getRespuesta" returnType="int" visibility="public"/>
+        <Method name="setRespuesta" returnType="void" visibility="public">
+          <Argument type="int" name="respuesta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IniciarSesionController" package="control" visibility="public" xPosition="1554.0" yPosition="1677.0">
+      <Fields>
+        <Field name="contrasena" type="PasswordField" visibility="private"/>
+        <Field name="enviar" type="Button" visibility="private"/>
+        <Field name="usuario" type="TextField" visibility="private"/>
+        <Field name="Mensaje" type="Label" visibility="private"/>
+        <Field name="fondo" type="AnchorPane" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+        <Method name="AccionEnviar" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IllegalOrphanException" package="DAO.exceptions" visibility="public" xPosition="971.0" yPosition="1049.0">
+      <Fields>
+        <Field name="messages" type="List&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="List&lt;String&gt;" name="messages"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMessages" returnType="List&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NonexistentEntityException" package="DAO.exceptions" visibility="public" xPosition="2579.0" yPosition="318.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PreexistingEntityException" package="DAO.exceptions" visibility="public" xPosition="2987.0" yPosition="318.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TbasignaturaJpaController" package="DAO" visibility="public" xPosition="1962.0" yPosition="913.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbasignatura" name="tbasignatura"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbasignatura" name="tbasignatura"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="findTbasignaturaEntities" returnType="List&lt;Tbasignatura&gt;" visibility="public"/>
+        <Method name="findTbasignaturaEntities" returnType="List&lt;Tbasignatura&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbasignaturaEntities" returnType="List&lt;Tbasignatura&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbasignatura" returnType="Tbasignatura" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getTbasignaturaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbbloqueJpaController" package="DAO" visibility="public" xPosition="2289.0" yPosition="528.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbbloque" name="tbbloque"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbbloque" name="tbbloque"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbbloqueEntities" returnType="List&lt;Tbbloque&gt;" visibility="public"/>
+        <Method name="findTbbloqueEntities" returnType="List&lt;Tbbloque&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloqueEntities" returnType="List&lt;Tbbloque&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloque" returnType="Tbbloque" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbbloqueCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbbloquesxencuestaJpaController" package="DAO" visibility="public" xPosition="13.0" yPosition="1677.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxencuesta" name="tbbloquesxencuesta"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxencuesta" name="tbbloquesxencuesta"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbbloquesxencuestaEntities" returnType="List&lt;Tbbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="findTbbloquesxencuestaEntities" returnType="List&lt;Tbbloquesxencuesta&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloquesxencuestaEntities" returnType="List&lt;Tbbloquesxencuesta&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloquesxencuesta" returnType="Tbbloquesxencuesta" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbbloquesxencuestaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbbloquesxpreguntaJpaController" package="DAO" visibility="public" xPosition="4124.0" yPosition="1241.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxpregunta" name="tbbloquesxpregunta"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxpregunta" name="tbbloquesxpregunta"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbbloquesxpreguntaEntities" returnType="List&lt;Tbbloquesxpregunta&gt;" visibility="public"/>
+        <Method name="findTbbloquesxpreguntaEntities" returnType="List&lt;Tbbloquesxpregunta&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloquesxpreguntaEntities" returnType="List&lt;Tbbloquesxpregunta&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbbloquesxpregunta" returnType="Tbbloquesxpregunta" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbbloquesxpreguntaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbencuestaJpaController" package="DAO" visibility="public" xPosition="709.0" yPosition="1264.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbencuesta" name="tbencuesta"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbencuesta" name="tbencuesta"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbencuestaEntities" returnType="List&lt;Tbencuesta&gt;" visibility="public"/>
+        <Method name="findTbencuestaEntities" returnType="List&lt;Tbencuesta&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuestaEntities" returnType="List&lt;Tbencuesta&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuesta" returnType="Tbencuesta" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbencuestaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbencuestasxusuarioJpaController" package="DAO" visibility="public" xPosition="1230.0" yPosition="1315.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbencuestasxusuario" name="tbencuestasxusuario"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbencuestasxusuario" name="tbencuestasxusuario"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbencuestasxusuarioEntities" returnType="List&lt;Tbencuestasxusuario&gt;" visibility="public"/>
+        <Method name="findTbencuestasxusuarioEntities" returnType="List&lt;Tbencuestasxusuario&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuestasxusuarioEntities" returnType="List&lt;Tbencuestasxusuario&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuestasxusuario" returnType="Tbencuestasxusuario" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbencuestasxusuarioCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbencuestaxasignaturaJpaController" package="DAO" visibility="public" xPosition="2781.0" yPosition="528.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbencuestaxasignatura" name="tbencuestaxasignatura"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbencuestaxasignatura" name="tbencuestaxasignatura"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbencuestaxasignaturaEntities" returnType="List&lt;Tbencuestaxasignatura&gt;" visibility="public"/>
+        <Method name="findTbencuestaxasignaturaEntities" returnType="List&lt;Tbencuestaxasignatura&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuestaxasignaturaEntities" returnType="List&lt;Tbencuestaxasignatura&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbencuestaxasignatura" returnType="Tbencuestaxasignatura" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbencuestaxasignaturaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbgrupoJpaController" package="DAO" visibility="public" xPosition="2579.0" yPosition="11.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbgrupo" name="tbgrupo"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbgrupo" name="tbgrupo"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbgrupoEntities" returnType="List&lt;Tbgrupo&gt;" visibility="public"/>
+        <Method name="findTbgrupoEntities" returnType="List&lt;Tbgrupo&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbgrupoEntities" returnType="List&lt;Tbgrupo&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbgrupo" returnType="Tbgrupo" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbgrupoCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbgrupoxasignaturaxprofesorJpaController" package="DAO" visibility="public" xPosition="1869.0" yPosition="1225.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbgrupoxasignaturaxprofesor" name="tbgrupoxasignaturaxprofesor"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbgrupoxasignaturaxprofesor" name="tbgrupoxasignaturaxprofesor"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbgrupoxasignaturaxprofesorEntities" returnType="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="public"/>
+        <Method name="findTbgrupoxasignaturaxprofesorEntities" returnType="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbgrupoxasignaturaxprofesorEntities" returnType="List&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbgrupoxasignaturaxprofesor" returnType="Tbgrupoxasignaturaxprofesor" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbgrupoxasignaturaxprofesorCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbinformesJpaController" package="DAO" visibility="public" xPosition="2618.0" yPosition="880.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbinformes" name="tbinformes"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbinformes" name="tbinformes"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbinformesEntities" returnType="List&lt;Tbinformes&gt;" visibility="public"/>
+        <Method name="findTbinformesEntities" returnType="List&lt;Tbinformes&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbinformesEntities" returnType="List&lt;Tbinformes&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbinformes" returnType="Tbinformes" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbinformesCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbpreguntaJpaController" package="DAO" visibility="public" xPosition="13.0" yPosition="1986.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbpregunta" name="tbpregunta"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbpregunta" name="tbpregunta"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbpreguntaEntities" returnType="List&lt;Tbpregunta&gt;" visibility="public"/>
+        <Method name="findTbpreguntaEntities" returnType="List&lt;Tbpregunta&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbpreguntaEntities" returnType="List&lt;Tbpregunta&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbpregunta" returnType="Tbpregunta" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbpreguntaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbprofesorJpaController" package="DAO" visibility="public" xPosition="3611.0" yPosition="1912.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbprofesor" name="tbprofesor"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbprofesor" name="tbprofesor"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="BigDecimal" name="id"/>
+        </Method>
+        <Method name="findTbprofesorEntities" returnType="List&lt;Tbprofesor&gt;" visibility="public"/>
+        <Method name="findTbprofesorEntities" returnType="List&lt;Tbprofesor&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbprofesorEntities" returnType="List&lt;Tbprofesor&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbprofesor" returnType="Tbprofesor" visibility="public">
+          <Argument type="BigDecimal" name="id"/>
+        </Method>
+        <Method name="getTbprofesorCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbrespuestaxpreguntasxbloquesxencuestaJpaController" package="DAO" visibility="public" xPosition="667.0" yPosition="1677.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbrespuestaxpreguntasxbloquesxencuesta" name="tbrespuestaxpreguntasxbloquesxencuesta"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbrespuestaxpreguntasxbloquesxencuesta" name="tbrespuestaxpreguntasxbloquesxencuesta"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbrespuestaxpreguntasxbloquesxencuestaEntities" returnType="List&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="findTbrespuestaxpreguntasxbloquesxencuestaEntities" returnType="List&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbrespuestaxpreguntasxbloquesxencuestaEntities" returnType="List&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbrespuestaxpreguntasxbloquesxencuesta" returnType="Tbrespuestaxpreguntasxbloquesxencuesta" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbtipoJpaController" package="DAO" visibility="public" xPosition="2077.0" yPosition="2256.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbtipo" name="tbtipo"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbtipo" name="tbtipo"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbtipoEntities" returnType="List&lt;Tbtipo&gt;" visibility="public"/>
+        <Method name="findTbtipoEntities" returnType="List&lt;Tbtipo&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbtipoEntities" returnType="List&lt;Tbtipo&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbtipo" returnType="Tbtipo" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbtipoCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbusuarioJpaController" package="DAO" visibility="public" xPosition="2033.0" yPosition="1943.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbusuario" name="tbusuario"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbusuario" name="tbusuario"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="BigDecimal" name="id"/>
+        </Method>
+        <Method name="findTbusuarioEntities" returnType="List&lt;Tbusuario&gt;" visibility="public"/>
+        <Method name="findTbusuarioEntities" returnType="List&lt;Tbusuario&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbusuarioEntities" returnType="List&lt;Tbusuario&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbusuario" returnType="Tbusuario" visibility="public">
+          <Argument type="BigDecimal" name="id"/>
+        </Method>
+        <Method name="getTbusuarioCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TbusuarioxgrupoxasignaturaJpaController" package="DAO" visibility="public" xPosition="1878.0" yPosition="1564.0">
+      <Fields>
+        <Field name="emf" type="EntityManagerFactory" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="public"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="Tbusuarioxgrupoxasignatura" name="tbusuarioxgrupoxasignatura"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="Tbusuarioxgrupoxasignatura" name="tbusuarioxgrupoxasignatura"/>
+        </Method>
+        <Method name="destroy" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="findTbusuarioxgrupoxasignaturaEntities" returnType="List&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="public"/>
+        <Method name="findTbusuarioxgrupoxasignaturaEntities" returnType="List&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="public">
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbusuarioxgrupoxasignaturaEntities" returnType="List&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="private">
+          <Argument type="boolean" name="all"/>
+          <Argument type="int" name="maxResults"/>
+          <Argument type="int" name="firstResult"/>
+        </Method>
+        <Method name="findTbusuarioxgrupoxasignatura" returnType="Tbusuarioxgrupoxasignatura" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbusuarioxgrupoxasignaturaCount" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbasignatura" package="modelo" visibility="public" xPosition="3333.0" yPosition="1241.0">
+      <Fields>
+        <Field name="tbusuarioxgrupoxasignaturaCollection" type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="fechamodificacion" type="Date" visibility="private"/>
+        <Field name="tbencuestaxasignaturaCollection" type="Collection&lt;Tbencuestaxasignatura&gt;" visibility="private"/>
+        <Field name="tbgrupoxasignaturaxprofesorCollection" type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="String" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="String" name="codigo"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getFechamodificacion" returnType="Date" visibility="public"/>
+        <Method name="setFechamodificacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamodificacion"/>
+        </Method>
+        <Method name="getTbencuestaxasignaturaCollection" returnType="Collection&lt;Tbencuestaxasignatura&gt;" visibility="public"/>
+        <Method name="setTbencuestaxasignaturaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbencuestaxasignatura&gt;" name="tbencuestaxasignaturaCollection"/>
+        </Method>
+        <Method name="getTbgrupoxasignaturaxprofesorCollection" returnType="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="public"/>
+        <Method name="setTbgrupoxasignaturaxprofesorCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" name="tbgrupoxasignaturaxprofesorCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTbusuarioxgrupoxasignaturaCollection" returnType="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="public"/>
+        <Method name="setTbusuarioxgrupoxasignaturaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" name="tbusuarioxgrupoxasignaturaCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tbbloque" package="modelo" visibility="public" xPosition="2632.0" yPosition="1225.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="fechamodificacion" type="Date" visibility="private"/>
+        <Field name="tbbloquesxpreguntaCollection" type="Collection&lt;Tbbloquesxpregunta&gt;" visibility="private"/>
+        <Field name="tbbloquesxencuestaCollection" type="Collection&lt;Tbbloquesxencuesta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getFechamodificacion" returnType="Date" visibility="public"/>
+        <Method name="setFechamodificacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamodificacion"/>
+        </Method>
+        <Method name="getTbbloquesxpreguntaCollection" returnType="Collection&lt;Tbbloquesxpregunta&gt;" visibility="public"/>
+        <Method name="setTbbloquesxpreguntaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbbloquesxpregunta&gt;" name="tbbloquesxpreguntaCollection"/>
+        </Method>
+        <Method name="getTbbloquesxencuestaCollection" returnType="Collection&lt;Tbbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbbloquesxencuesta&gt;" name="tbbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbbloquesxencuesta" package="modelo" visibility="public" xPosition="13.0" yPosition="2287.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="tbrespuestaxpreguntasxbloquesxencuestaCollection" type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private"/>
+        <Field name="idbloque" type="Tbbloque" visibility="private"/>
+        <Field name="idencuesta" type="Tbencuesta" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" name="tbrespuestaxpreguntasxbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="getIdbloque" returnType="Tbbloque" visibility="public"/>
+        <Method name="setIdbloque" returnType="void" visibility="public">
+          <Argument type="Tbbloque" name="idbloque"/>
+        </Method>
+        <Method name="getIdencuesta" returnType="Tbencuesta" visibility="public"/>
+        <Method name="setIdencuesta" returnType="void" visibility="public">
+          <Argument type="Tbencuesta" name="idencuesta"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbbloquesxpregunta" package="modelo" visibility="public" xPosition="1023.0" yPosition="2001.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="tbrespuestaxpreguntasxbloquesxencuestaCollection" type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private"/>
+        <Field name="idbloque" type="Tbbloque" visibility="private"/>
+        <Field name="idpregunta" type="Tbpregunta" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" name="tbrespuestaxpreguntasxbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="getIdbloque" returnType="Tbbloque" visibility="public"/>
+        <Method name="setIdbloque" returnType="void" visibility="public">
+          <Argument type="Tbbloque" name="idbloque"/>
+        </Method>
+        <Method name="getIdpregunta" returnType="Tbpregunta" visibility="public"/>
+        <Method name="setIdpregunta" returnType="void" visibility="public">
+          <Argument type="Tbpregunta" name="idpregunta"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbencuesta" package="modelo" visibility="public" xPosition="13.0" yPosition="3263.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="fechamodificacion" type="Date" visibility="private"/>
+        <Field name="tbencuestaxasignaturaCollection" type="Collection&lt;Tbencuestaxasignatura&gt;" visibility="private"/>
+        <Field name="tbbloquesxencuestaCollection" type="Collection&lt;Tbbloquesxencuesta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getFechamodificacion" returnType="Date" visibility="public"/>
+        <Method name="setFechamodificacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamodificacion"/>
+        </Method>
+        <Method name="getTbencuestaxasignaturaCollection" returnType="Collection&lt;Tbencuestaxasignatura&gt;" visibility="public"/>
+        <Method name="setTbencuestaxasignaturaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbencuestaxasignatura&gt;" name="tbencuestaxasignaturaCollection"/>
+        </Method>
+        <Method name="getTbbloquesxencuestaCollection" returnType="Collection&lt;Tbbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbbloquesxencuesta&gt;" name="tbbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbencuestasxusuario" package="modelo" visibility="public" xPosition="3925.0" yPosition="528.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="estado" type="String" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="comentario" type="String" visibility="private"/>
+        <Field name="idencuestaxasignatura" type="Tbencuestaxasignatura" visibility="private"/>
+        <Field name="idgrupoxasignaturaxprofesor" type="Tbgrupoxasignaturaxprofesor" visibility="private"/>
+        <Field name="codigousuario" type="Tbusuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="estado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getFecha" returnType="Date" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="Date" name="fecha"/>
+        </Method>
+        <Method name="getComentario" returnType="String" visibility="public"/>
+        <Method name="setComentario" returnType="void" visibility="public">
+          <Argument type="String" name="comentario"/>
+        </Method>
+        <Method name="getIdencuestaxasignatura" returnType="Tbencuestaxasignatura" visibility="public"/>
+        <Method name="setIdencuestaxasignatura" returnType="void" visibility="public">
+          <Argument type="Tbencuestaxasignatura" name="idencuestaxasignatura"/>
+        </Method>
+        <Method name="getIdgrupoxasignaturaxprofesor" returnType="Tbgrupoxasignaturaxprofesor" visibility="public"/>
+        <Method name="setIdgrupoxasignaturaxprofesor" returnType="void" visibility="public">
+          <Argument type="Tbgrupoxasignaturaxprofesor" name="idgrupoxasignaturaxprofesor"/>
+        </Method>
+        <Method name="getCodigousuario" returnType="Tbusuario" visibility="public"/>
+        <Method name="setCodigousuario" returnType="void" visibility="public">
+          <Argument type="Tbusuario" name="codigousuario"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbencuestaxasignatura" package="modelo" visibility="public" xPosition="3611.0" yPosition="2806.0">
+      <Fields>
+        <Field name="tbencuestasxusuarioCollection" type="Collection&lt;Tbencuestasxusuario&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="tbinformesCollection" type="Collection&lt;Tbinformes&gt;" visibility="private"/>
+        <Field name="idasignatura" type="Tbasignatura" visibility="private"/>
+        <Field name="idencuesta" type="Tbencuesta" visibility="private"/>
+        <Field name="tbrespuestaxpreguntasxbloquesxencuestaCollection" type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getTbinformesCollection" returnType="Collection&lt;Tbinformes&gt;" visibility="public"/>
+        <Method name="setTbinformesCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbinformes&gt;" name="tbinformesCollection"/>
+        </Method>
+        <Method name="getIdasignatura" returnType="Tbasignatura" visibility="public"/>
+        <Method name="setIdasignatura" returnType="void" visibility="public">
+          <Argument type="Tbasignatura" name="idasignatura"/>
+        </Method>
+        <Method name="getIdencuesta" returnType="Tbencuesta" visibility="public"/>
+        <Method name="setIdencuesta" returnType="void" visibility="public">
+          <Argument type="Tbencuesta" name="idencuesta"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" name="tbrespuestaxpreguntasxbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTbencuestasxusuarioCollection" returnType="Collection&lt;Tbencuestasxusuario&gt;" visibility="public"/>
+        <Method name="setTbencuestasxusuarioCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbencuestasxusuario&gt;" name="tbencuestasxusuarioCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tbgrupo" package="modelo" visibility="public" xPosition="3611.0" yPosition="2249.0">
+      <Fields>
+        <Field name="tbusuarioxgrupoxasignaturaCollection" type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="identificacion" type="Integer" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="fechamodificacion" type="Date" visibility="private"/>
+        <Field name="tbgrupoxasignaturaxprofesorCollection" type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="identificacion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="identificacion"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdentificacion" returnType="Integer" visibility="public"/>
+        <Method name="setIdentificacion" returnType="void" visibility="public">
+          <Argument type="Integer" name="identificacion"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getFechamodificacion" returnType="Date" visibility="public"/>
+        <Method name="setFechamodificacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamodificacion"/>
+        </Method>
+        <Method name="getTbgrupoxasignaturaxprofesorCollection" returnType="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="public"/>
+        <Method name="setTbgrupoxasignaturaxprofesorCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" name="tbgrupoxasignaturaxprofesorCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTbusuarioxgrupoxasignaturaCollection" returnType="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="public"/>
+        <Method name="setTbusuarioxgrupoxasignaturaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" name="tbusuarioxgrupoxasignaturaCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tbgrupoxasignaturaxprofesor" package="modelo" visibility="public" xPosition="2579.0" yPosition="1923.0">
+      <Fields>
+        <Field name="tbencuestasxusuarioCollection" type="Collection&lt;Tbencuestasxusuario&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="cupo" type="int" visibility="private"/>
+        <Field name="tbinformesCollection" type="Collection&lt;Tbinformes&gt;" visibility="private"/>
+        <Field name="idasignatura" type="Tbasignatura" visibility="private"/>
+        <Field name="idgrupo" type="Tbgrupo" visibility="private"/>
+        <Field name="cedula" type="Tbprofesor" visibility="private"/>
+        <Field name="tbrespuestaxpreguntasxbloquesxencuestaCollection" type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="int" name="cupo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getCupo" returnType="int" visibility="public"/>
+        <Method name="setCupo" returnType="void" visibility="public">
+          <Argument type="int" name="cupo"/>
+        </Method>
+        <Method name="getTbinformesCollection" returnType="Collection&lt;Tbinformes&gt;" visibility="public"/>
+        <Method name="setTbinformesCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbinformes&gt;" name="tbinformesCollection"/>
+        </Method>
+        <Method name="getIdasignatura" returnType="Tbasignatura" visibility="public"/>
+        <Method name="setIdasignatura" returnType="void" visibility="public">
+          <Argument type="Tbasignatura" name="idasignatura"/>
+        </Method>
+        <Method name="getIdgrupo" returnType="Tbgrupo" visibility="public"/>
+        <Method name="setIdgrupo" returnType="void" visibility="public">
+          <Argument type="Tbgrupo" name="idgrupo"/>
+        </Method>
+        <Method name="getCedula" returnType="Tbprofesor" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="Tbprofesor" name="cedula"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" name="tbrespuestaxpreguntasxbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTbencuestasxusuarioCollection" returnType="Collection&lt;Tbencuestasxusuario&gt;" visibility="public"/>
+        <Method name="setTbencuestasxusuarioCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbencuestasxusuario&gt;" name="tbencuestasxusuarioCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tbinformes" package="modelo" visibility="public" xPosition="3406.0" yPosition="39.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="idencuestaxasignatura" type="Tbencuestaxasignatura" visibility="private"/>
+        <Field name="idgrupoxasignaturaxprofesor" type="Tbgrupoxasignaturaxprofesor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getIdencuestaxasignatura" returnType="Tbencuestaxasignatura" visibility="public"/>
+        <Method name="setIdencuestaxasignatura" returnType="void" visibility="public">
+          <Argument type="Tbencuestaxasignatura" name="idencuestaxasignatura"/>
+        </Method>
+        <Method name="getIdgrupoxasignaturaxprofesor" returnType="Tbgrupoxasignaturaxprofesor" visibility="public"/>
+        <Method name="setIdgrupoxasignaturaxprofesor" returnType="void" visibility="public">
+          <Argument type="Tbgrupoxasignaturaxprofesor" name="idgrupoxasignaturaxprofesor"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbpregunta" package="modelo" visibility="public" xPosition="13.0" yPosition="2730.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="fechactf" type="Object" visibility="public" isStatic="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="fechacreacion" type="Date" visibility="private"/>
+        <Field name="fechamodificacion" type="Date" visibility="private"/>
+        <Field name="tbbloquesxpreguntaCollection" type="Collection&lt;Tbbloquesxpregunta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Date" name="fechacreacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getFechacreacion" returnType="Date" visibility="public"/>
+        <Method name="setFechacreacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechacreacion"/>
+        </Method>
+        <Method name="getFechamodificacion" returnType="Date" visibility="public"/>
+        <Method name="setFechamodificacion" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamodificacion"/>
+        </Method>
+        <Method name="getTbbloquesxpreguntaCollection" returnType="Collection&lt;Tbbloquesxpregunta&gt;" visibility="public"/>
+        <Method name="setTbbloquesxpreguntaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbbloquesxpregunta&gt;" name="tbbloquesxpreguntaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbprofesor" package="modelo" visibility="public" xPosition="692.0" yPosition="2750.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="cedula" type="BigDecimal" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="telefono" type="Integer" visibility="private"/>
+        <Field name="tbgrupoxasignaturaxprofesorCollection" type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="BigDecimal" name="cedula"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="BigDecimal" name="cedula"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCedula" returnType="BigDecimal" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="BigDecimal" name="cedula"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getTelefono" returnType="Integer" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="Integer" name="telefono"/>
+        </Method>
+        <Method name="getTbgrupoxasignaturaxprofesorCollection" returnType="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" visibility="public"/>
+        <Method name="setTbgrupoxasignaturaxprofesorCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbgrupoxasignaturaxprofesor&gt;" name="tbgrupoxasignaturaxprofesorCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbrespuestaxpreguntasxbloquesxencuesta" package="modelo" visibility="public" xPosition="1471.0" yPosition="2482.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="respuesta" type="int" visibility="private"/>
+        <Field name="idbloquexencuesta" type="Tbbloquesxencuesta" visibility="private"/>
+        <Field name="idbloquexpregunta" type="Tbbloquesxpregunta" visibility="private"/>
+        <Field name="idencuestaxasignatura" type="Tbencuestaxasignatura" visibility="private"/>
+        <Field name="idgrupoxasignaturaxprofesor" type="Tbgrupoxasignaturaxprofesor" visibility="private"/>
+        <Field name="codigousuario" type="Tbusuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="int" name="respuesta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getFecha" returnType="Date" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="Date" name="fecha"/>
+        </Method>
+        <Method name="getRespuesta" returnType="int" visibility="public"/>
+        <Method name="setRespuesta" returnType="void" visibility="public">
+          <Argument type="int" name="respuesta"/>
+        </Method>
+        <Method name="getIdbloquexencuesta" returnType="Tbbloquesxencuesta" visibility="public"/>
+        <Method name="setIdbloquexencuesta" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxencuesta" name="idbloquexencuesta"/>
+        </Method>
+        <Method name="getIdbloquexpregunta" returnType="Tbbloquesxpregunta" visibility="public"/>
+        <Method name="setIdbloquexpregunta" returnType="void" visibility="public">
+          <Argument type="Tbbloquesxpregunta" name="idbloquexpregunta"/>
+        </Method>
+        <Method name="getIdencuestaxasignatura" returnType="Tbencuestaxasignatura" visibility="public"/>
+        <Method name="setIdencuestaxasignatura" returnType="void" visibility="public">
+          <Argument type="Tbencuestaxasignatura" name="idencuestaxasignatura"/>
+        </Method>
+        <Method name="getIdgrupoxasignaturaxprofesor" returnType="Tbgrupoxasignaturaxprofesor" visibility="public"/>
+        <Method name="setIdgrupoxasignaturaxprofesor" returnType="void" visibility="public">
+          <Argument type="Tbgrupoxasignaturaxprofesor" name="idgrupoxasignaturaxprofesor"/>
+        </Method>
+        <Method name="getCodigousuario" returnType="Tbusuario" visibility="public"/>
+        <Method name="setCodigousuario" returnType="void" visibility="public">
+          <Argument type="Tbusuario" name="codigousuario"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbtipo" package="modelo" visibility="public" xPosition="2082.0" yPosition="2654.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="privilegios" type="String" visibility="private"/>
+        <Field name="tbusuarioCollection" type="Collection&lt;Tbusuario&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="privilegios"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getPrivilegios" returnType="String" visibility="public"/>
+        <Method name="setPrivilegios" returnType="void" visibility="public">
+          <Argument type="String" name="privilegios"/>
+        </Method>
+        <Method name="getTbusuarioCollection" returnType="Collection&lt;Tbusuario&gt;" visibility="public"/>
+        <Method name="setTbusuarioCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbusuario&gt;" name="tbusuarioCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tbusuario" package="modelo" visibility="public" xPosition="2579.0" yPosition="2654.0">
+      <Fields>
+        <Field name="tbusuarioxgrupoxasignaturaCollection" type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="private"/>
+        <Field name="tbencuestasxusuarioCollection" type="Collection&lt;Tbencuestasxusuario&gt;" visibility="private"/>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="codigo" type="BigDecimal" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+        <Field name="contrasena" type="String" visibility="private"/>
+        <Field name="idtipo" type="Tbtipo" visibility="private"/>
+        <Field name="tbrespuestaxpreguntasxbloquesxencuestaCollection" type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="BigDecimal" name="codigo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="BigDecimal" name="codigo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="BigDecimal" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="BigDecimal" name="codigo"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="setContrasena" returnType="void" visibility="public">
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="getIdtipo" returnType="Tbtipo" visibility="public"/>
+        <Method name="setIdtipo" returnType="void" visibility="public">
+          <Argument type="Tbtipo" name="idtipo"/>
+        </Method>
+        <Method name="getTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" visibility="public"/>
+        <Method name="setTbrespuestaxpreguntasxbloquesxencuestaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbrespuestaxpreguntasxbloquesxencuesta&gt;" name="tbrespuestaxpreguntasxbloquesxencuestaCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTbusuarioxgrupoxasignaturaCollection" returnType="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" visibility="public"/>
+        <Method name="setTbusuarioxgrupoxasignaturaCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbusuarioxgrupoxasignatura&gt;" name="tbusuarioxgrupoxasignaturaCollection"/>
+        </Method>
+        <Method name="getTbencuestasxusuarioCollection" returnType="Collection&lt;Tbencuestasxusuario&gt;" visibility="public"/>
+        <Method name="setTbencuestasxusuarioCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Tbencuestasxusuario&gt;" name="tbencuestasxusuarioCollection"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tbusuarioxgrupoxasignatura" package="modelo" visibility="public" xPosition="3510.0" yPosition="579.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="codigoasignatura" type="Tbasignatura" visibility="private"/>
+        <Field name="idgrupo" type="Tbgrupo" visibility="private"/>
+        <Field name="codigousuario" type="Tbusuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getCodigoasignatura" returnType="Tbasignatura" visibility="public"/>
+        <Method name="setCodigoasignatura" returnType="void" visibility="public">
+          <Argument type="Tbasignatura" name="codigoasignatura"/>
+        </Method>
+        <Method name="getIdgrupo" returnType="Tbgrupo" visibility="public"/>
+        <Method name="setIdgrupo" returnType="void" visibility="public">
+          <Argument type="Tbgrupo" name="idgrupo"/>
+        </Method>
+        <Method name="getCodigousuario" returnType="Tbusuario" visibility="public"/>
+        <Method name="setCodigousuario" returnType="void" visibility="public">
+          <Argument type="Tbusuario" name="codigousuario"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Activo" package="vista" visibility="public" xPosition="3071.0" yPosition="49.0">
+      <Fields>
+        <Field name="usuario" type="Tbusuario" visibility="public" isStatic="true"/>
+        <Field name="filtrado" type="Tbencuestasxusuario[]" visibility="public" isStatic="true"/>
+        <Field name="botonActivo" type="int" visibility="public" isStatic="true"/>
+        <Field name="bloquecreado" type="String" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cambioAnchor" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="cambioBorder" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+          <Argument type="String" name="ruta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="vista" visibility="public" xPosition="4034.0" yPosition="96.0">
+      <Fields>
+        <Field name="stage" type="Stage" visibility="private"/>
+        <Field name="root" type="Parent" visibility="private"/>
+        <Field name="scene" type="Scene" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="getStage" returnType="Stage" visibility="public"/>
+        <Method name="setStage" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="getRoot" returnType="Parent" visibility="public"/>
+        <Method name="setRoot" returnType="void" visibility="public">
+          <Argument type="Parent" name="root"/>
+        </Method>
+        <Method name="getScene" returnType="Scene" visibility="public"/>
+        <Method name="setScene" returnType="void" visibility="public">
+          <Argument type="Scene" name="scene"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="results" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloquesxencuesta&gt;"/>
+    <UseRelation source="modelo.Tbencuestaxasignatura" target="modelo.Tbencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encuestabd" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idgrupoxasignaturaxprofesor" source="modelo.Tbinformes" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloque" source="control.Admin.GestionBloqueController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultsbloque" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloque&gt;"/>
+    <UseRelation source="modelo.Tbbloque" target="modelo.Tbbloquesxpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gpabd" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbrespuestaxpreguntasxbloquesxencuestaCollection" source="modelo.Tbusuario" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idbloquexencuesta" source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encuestabd" source="control.Admin.GestionEncuestaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="preguntabd" source="control.Admin.GestionPreguntaController" target="modelo.Tbpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idencuestaxasignatura" source="modelo.Tbencuestasxusuario" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbgrupoxasignaturaxprofesorCollection" source="modelo.Tbasignatura" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxpregunta" target="modelo.Tbpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuario" target="modelo.Tbusuarioxgrupoxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pregunta" source="control.Admin.GestionPreguntaController" target="modelo.Tbpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="filtrado" source="vista.Activo" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxencuesta" target="modelo.Tbencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbencuestasxusuarioCollection" source="modelo.Tbusuario" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultsprofesor" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbprofesor&gt;"/>
+    <HasRelation name="tbencuestaxasignaturaCollection" source="modelo.Tbasignatura" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gpa" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="results" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuestaxasignatura&gt;"/>
+    <UseRelation source="modelo.Tbgrupo" target="modelo.Tbusuarioxgrupoxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbrespuestaxpreguntasxbloquesxencuestaCollection" source="modelo.Tbbloquesxencuesta" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestasxusuario" target="modelo.Tbusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultencuesta" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuesta&gt;"/>
+    <HasRelation name="tbrespuestaxpreguntasxbloquesxencuestaCollection" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupo" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestasxusuario" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloquebd" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbusuarioJpaController" target="modelo.Tbusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="filtrado" source="control.Estudiante.EvaluacionController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesorbd" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materiabd" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idgrupo" source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbgrupo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultsbloqxpreg" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloquesxpregunta&gt;"/>
+    <UseRelation source="modelo.Tbbloque" target="modelo.Tbbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bxebd" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="seleccion" source="control.Estudiante.EvaluacionController" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbusuarioxgrupoxasignaturaCollection" source="modelo.Tbasignatura" target="modelo.Tbusuarioxgrupoxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbrespuestaxpreguntasxbloquesxencuestaJpaController" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbtipoJpaController" target="modelo.Tbtipo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbbloquesxpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuario" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloqxpregbd" source="control.Estudiante.EvaluacionController" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbusuarioxgrupoxasignaturaCollection" source="modelo.Tbgrupo" target="modelo.Tbusuarioxgrupoxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idtipo" source="modelo.Tbusuario" target="modelo.Tbtipo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuariobd" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bxq" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idasignatura" source="modelo.Tbencuestaxasignatura" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultbloque" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloque&gt;"/>
+    <UseRelation source="modelo.Tbpregunta" target="modelo.Tbbloquesxpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbasignaturaJpaController" target="modelo.Tbasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestaxasignatura" target="modelo.Tbinformes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxpregunta" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbencuestaJpaController" target="modelo.Tbencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesorbd" source="control.Admin.GestionDocenteController" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbbloquesxencuestaJpaController" target="modelo.Tbbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbrespuestaxpreguntasxbloquesxencuestaCollection" source="modelo.Tbbloquesxpregunta" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbgrupoxasignaturaxprofesorCollection" source="modelo.Tbgrupo" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestasxusuario" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxencuesta" target="modelo.Tbbloque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="exa" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbprofesorJpaController" target="modelo.Tbprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbgrupoxasignaturaxprofesorCollection" source="modelo.Tbprofesor" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbencuestaxasignaturaCollection" source="modelo.Tbencuesta" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="results" source="control.Estudiante.PrincipalUsuarioController" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuestasxusuario&gt;"/>
+    <HasRelation name="resultsgrupo" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbgrupo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbgrupo&gt;"/>
+    <UseRelation source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idencuestaxasignatura" source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbasignatura" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuxmat" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuestasxusuario&gt;"/>
+    <HasRelation name="bloqxencu" source="control.Estudiante.EvaluacionController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloquesxencuesta&gt;"/>
+    <UseRelation source="modelo.Tbprofesor" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbasignatura" target="modelo.Tbusuarioxgrupoxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuxmatbd" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbgrupoxasignaturaxprofesorJpaController" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbinformesCollection" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbinformes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloqxencubd" source="control.Estudiante.EvaluacionController" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbbloquesxpreguntaCollection" source="modelo.Tbbloque" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbbloquesxencuestaCollection" source="modelo.Tbbloque" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbasignatura" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cedula" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbinformesCollection" source="modelo.Tbencuestaxasignatura" target="modelo.Tbinformes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="codigousuario" source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="userbd" source="control.Admin.GestionUserController" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultencuesta" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuesta&gt;"/>
+    <HasRelation name="materias" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbasignatura&gt;"/>
+    <HasRelation name="encuxasig" source="control.Estudiante.EvaluacionController" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbencuestaxasignatura&gt;"/>
+    <HasRelation name="asignaturabd" source="control.Admin.GestionAsignaturaController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="control.Admin.GestionUserController" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuario" target="modelo.Tbtipo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloqxpregbd" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="asignatura" source="control.Admin.GestionAsignaturaController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbencuestaxasignaturaJpaController" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbusuarioxgrupoxasignaturaCollection" source="modelo.Tbusuario" target="modelo.Tbusuarioxgrupoxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxpregunta" target="modelo.Tbbloque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbinformes" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idgrupo" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbgrupo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloquebd" source="control.Admin.GestionBloqueController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="preguntabd" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuario" target="modelo.Tbencuestasxusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materiasbd" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="control.Admin.AsignarEstudianteAsignaturaController" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbusuario&gt;"/>
+    <UseRelation source="DAO.TbgrupoJpaController" target="modelo.Tbgrupo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbtipo" target="modelo.Tbusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encuesta" source="control.Admin.GestionEncuestaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbbloquesxpreguntaJpaController" target="modelo.Tbbloquesxpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idasignatura" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encuxasigbd" source="control.Estudiante.EvaluacionController" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultspregunta" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbpregunta&gt;"/>
+    <HasRelation name="bloqxpreg" source="control.Estudiante.EvaluacionController" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbbloquesxpregunta&gt;"/>
+    <UseRelation source="modelo.Tbencuestaxasignatura" target="modelo.Tbasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gpa" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbinformes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbencuestasxusuarioCollection" source="modelo.Tbencuestaxasignatura" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="control.Estudiante.EvaluacionController" target="control.Estudiante.Respuestas" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="codigousuario" source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloqxpre" source="control.Admin.AsignarPreguntaBloqueController" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bloquebd" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbpreguntaJpaController" target="modelo.Tbpregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbinformesJpaController" target="modelo.Tbinformes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="codigoasignatura" source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestaxasignatura" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idencuesta" source="modelo.Tbbloquesxencuesta" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idbloque" source="modelo.Tbbloquesxencuesta" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbencuestasxusuarioJpaController" target="modelo.Tbencuestasxusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idbloque" source="modelo.Tbbloquesxpregunta" target="modelo.Tbbloque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbinformes" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbbloqueJpaController" target="modelo.Tbbloque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbbloquesxpreguntaCollection" source="modelo.Tbpregunta" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="results" source="control.Admin.GenerarInformeController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbgrupoxasignaturaxprofesor&gt;"/>
+    <HasRelation name="idencuesta" source="modelo.Tbencuestaxasignatura" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuesta" target="modelo.Tbencuestaxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="results" source="control.Admin.GestionUserController" target="modelo.Tbtipo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbtipo&gt;"/>
+    <HasRelation name="idgrupoxasignaturaxprofesor" source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gpabd" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idpregunta" source="modelo.Tbbloquesxpregunta" target="modelo.Tbpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="codigousuario" source="modelo.Tbencuestasxusuario" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbusuarioxgrupoxasignatura" target="modelo.Tbgrupo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultsasignatura" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbasignatura&gt;"/>
+    <UseRelation source="modelo.Tbencuesta" target="modelo.Tbbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encuestabd" source="control.Admin.AsignarBloqueEncuestaController" target="modelo.Tbencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idgrupoxasignaturaxprofesor" source="modelo.Tbencuestasxusuario" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbencuestaxasignatura" target="modelo.Tbencuestasxusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="idbloquexpregunta" source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbbloquesxpregunta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prefesor" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbrespuestaxpreguntasxbloquesxencuestaCollection" source="modelo.Tbencuestaxasignatura" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbgrupo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="exabd" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DAO.TbusuarioxgrupoxasignaturaJpaController" target="modelo.Tbusuarioxgrupoxasignatura" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="vista.Activo" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="results" source="control.Admin.AsignarAsignaturaDocenteController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbgrupoxasignaturaxprofesor&gt;"/>
+    <HasRelation name="idencuestaxasignatura" source="modelo.Tbinformes" target="modelo.Tbencuestaxasignatura" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbbloquesxencuesta" target="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbbloquesxencuestaCollection" source="modelo.Tbencuesta" target="modelo.Tbbloquesxencuesta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prefesor" source="control.Admin.GestionDocenteController" target="modelo.Tbprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbusuarioCollection" source="modelo.Tbtipo" target="modelo.Tbusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="resultasignatura" source="control.Admin.AsignarEncuestaAsignaturaController" target="modelo.Tbgrupoxasignaturaxprofesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Tbgrupoxasignaturaxprofesor&gt;"/>
+    <UseRelation source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbencuestasxusuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tbencuestasxusuarioCollection" source="modelo.Tbgrupoxasignaturaxprofesor" target="modelo.Tbencuestasxusuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.Tbrespuestaxpreguntasxbloquesxencuesta" target="modelo.Tbgrupoxasignaturaxprofesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

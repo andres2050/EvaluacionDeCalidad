@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionDocenteController">
+   <children>
+      <ImageView fitHeight="82.0" fitWidth="455.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="517.0" layoutY="48.0" text="Gestion Docente">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="830.0" layoutY="171.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombretf" layoutX="672.0" layoutY="216.0" promptText="Nombres" />
+      <TextField fx:id="apellidotf" layoutX="667.0" layoutY="257.0" promptText="Apellidos" />
+      <TextField fx:id="codigotf" layoutX="672.0" layoutY="168.0" promptText="Cedula" />
+      <Button fx:id="crearbt" layoutX="563.0" layoutY="479.0" mnemonicParsing="false" onAction="#crear" prefHeight="25.0" prefWidth="67.0" text="Crear" />
+      <TextField fx:id="emailtf" layoutX="667.0" layoutY="295.0" promptText="Correo Electronico" />
+      <TextField fx:id="telefonotf" layoutX="667.0" layoutY="364.0" promptText="Telefono" />
+      <TextField fx:id="direcciontf" layoutX="667.0" layoutY="330.0" promptText="Direccion" />
+      <Label layoutX="826.0" layoutY="219.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="820.0" layoutY="260.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1048.0" layoutY="218.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="565.0" layoutY="121.0" text="Los Campos marcados con * son OBLIGATORIOS" textFill="RED" />
+      <Label fx:id="mensaje" layoutX="565.0" layoutY="415.0" text="Porfavor diligencie todos los campos marcados con *" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="mensaje2" layoutX="629.0" layoutY="531.0" text="El usuario ya existe" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tabladocente" layoutX="26.0" layoutY="115.0" onMouseClicked="#seleccionar" prefHeight="443.0" prefWidth="514.0" />
+      <Label layoutX="604.0" layoutY="170.0" text="Cedula :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="823.0" layoutY="297.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="820.0" layoutY="333.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="819.0" layoutY="367.0" text="*" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="596.0" layoutY="218.0" text="Nombre :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="595.0" layoutY="259.0" text="Apellido :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="609.0" layoutY="297.0" text="Email :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="582.0" layoutY="332.0" text="Direccion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="584.0" layoutY="367.0" text="Telefono :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="modificarbt" layoutX="654.0" layoutY="479.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+      <Button fx:id="consultarbt" layoutX="742.0" layoutY="479.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" />
+      <Button fx:id="limpiar" layoutX="823.0" layoutY="479.0" mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
+   </children>
+</AnchorPane>

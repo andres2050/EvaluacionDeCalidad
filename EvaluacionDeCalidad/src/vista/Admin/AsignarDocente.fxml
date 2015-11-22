@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.AsignarDocenteController">
+   <children>
+      <ImageView fitHeight="62.0" fitWidth="440.0" layoutX="55.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="605.0" layoutY="28.0" prefHeight="43.0" prefWidth="298.0" text="Asignar docente">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id="asignartb" layoutX="21.0" layoutY="116.0" prefHeight="378.0" prefWidth="501.0" />
+      <Label layoutX="571.0" layoutY="128.0" text="Codigo Docente :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cdocentetf" layoutX="705.0" layoutY="126.0" promptText="Codigo Docente" />
+      <Button fx:id="buscar1bt" layoutX="869.0" layoutY="126.0" mnemonicParsing="false" onAction="#Buscardocente" text="Buscar" />
+      <Label layoutX="562.0" layoutY="165.0" text="Nombre Docente :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ndocentetf" layoutX="705.0" layoutY="163.0" promptText="Nombre Docente" />
+      <TextField fx:id="nasignaturatf" layoutX="705.0" layoutY="243.0" promptText="Nombre Asignatura" />
+      <Label layoutX="549.0" layoutY="245.0" text="Nombre Asignatura :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="buscar2bt" layoutX="869.0" layoutY="206.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Buscar" />
+      <TextField fx:id="casignaturatf" layoutX="705.0" layoutY="206.0" promptText="Codigo Asignatura" />
+      <Label layoutX="553.0" layoutY="208.0" text="Codigo Asignatura :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="asignarbt" layoutX="571.0" layoutY="469.0" mnemonicParsing="false" onAction="#Crearasignacion" prefHeight="25.0" prefWidth="107.0" text="Asignar " />
+      <Button fx:id="modificarbt" layoutX="705.0" layoutY="469.0" mnemonicParsing="false" onAction="#Modificarasignacion" prefHeight="25.0" prefWidth="98.0" text="Modificar " />
+      <TextField fx:id="cupotf" layoutX="705.0" layoutY="281.0" promptText="Cupo" />
+      <ComboBox fx:id="grupocb" layoutX="705.0" layoutY="322.0" prefWidth="150.0" promptText="Grupo" />
+   </children>
+</AnchorPane>

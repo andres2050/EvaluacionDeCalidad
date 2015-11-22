@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="fondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.IniciarSesionController">
+   <children>
+      <Pane fx:id="panel" layoutX="267.0" layoutY="64.0" prefHeight="472.0" prefWidth="367.0">
+         <children>
+            <Button fx:id="enviarbt" layoutX="49.0" layoutY="349.0" mnemonicParsing="false" onAction="#AccionEnviar" prefHeight="66.0" prefWidth="269.0" text="Iniciar">
+               <font>
+                  <Font name="Segoe UI Symbol" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="usuariotf" layoutX="49.0" layoutY="205.0" prefHeight="46.0" prefWidth="269.0" promptText="Usuario">
+            </TextField>
+            <PasswordField fx:id="contrasenatf" layoutX="49.0" layoutY="278.0" prefHeight="46.0" prefWidth="269.0" promptText="Contraseña">
+            </PasswordField>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/univalle.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="Mensajelb" layoutY="426.0" prefHeight="46.0" prefWidth="269.0" text="Usuario/Contraseña Erroneo" textFill="RED" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Mensaje1lb" layoutX="35.0" layoutY="432.0" prefHeight="46.0" prefWidth="269.0" text="Los campos estam vacios" textFill="RED" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.CargarArchivoPlanoController">
+   <children>
+      <TextField fx:id="ruta" disable="true" layoutX="268.0" layoutY="195.0" prefHeight="25.0" prefWidth="312.0" promptText="Ruta" />
+      <Button fx:id="Examinar" layoutX="392.0" layoutY="288.0" mnemonicParsing="false" onAction="#AccionExaminar" text="Examinar" />
+      <Button fx:id="Cargar" layoutX="398.0" layoutY="371.0" mnemonicParsing="false" onAction="#AccionCargar" text="Cargar" />
+      <ImageView fitHeight="62.0" fitWidth="440.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="507.0" layoutY="40.0" text="Cargar Archivo Plano">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

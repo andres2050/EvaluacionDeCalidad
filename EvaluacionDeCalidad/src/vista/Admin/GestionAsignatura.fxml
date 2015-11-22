@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionAsignaturaController">
+   <children>
+      <TextField fx:id="fechac" layoutX="622.0" layoutY="288.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="fecham" layoutX="622.0" layoutY="362.0" prefHeight="21.0" prefWidth="180.0" />
+      <TableView fx:id="tablamateria" layoutX="69.0" layoutY="115.0" onMouseClicked="#seleccionar" prefHeight="399.0" prefWidth="505.0" />
+      <Label layoutX="626.0" layoutY="130.0" text="Codigo :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="629.0" layoutY="191.0" text="Nombre :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="259.0" text="Fecha Creacion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codigo" layoutX="626.0" layoutY="157.0" prefHeight="25.0" prefWidth="73.0" />
+      <TextField fx:id="nombre" layoutX="626.0" layoutY="219.0" prefHeight="21.0" prefWidth="180.0" />
+      <Button fx:id="crear" layoutX="577.0" layoutY="523.0" mnemonicParsing="false" onAction="#crear" prefHeight="21.0" prefWidth="90.0" text="Crear">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificar" layoutX="681.0" layoutY="523.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="90.0" text="Modificar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="consultar" layoutX="792.0" layoutY="523.0" mnemonicParsing="false" onAction="#consultar" prefHeight="25.0" prefWidth="90.0" text="Consultar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="549.0" layoutY="37.0" text="Gestion Asignatura">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="327.0" text="Fecha Modificacion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="62.0" fitWidth="440.0" layoutX="69.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

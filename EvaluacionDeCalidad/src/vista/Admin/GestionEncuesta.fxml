@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionEncuestaController">
+   <children>
+      <ImageView fitHeight="82.0" fitWidth="455.0" layoutX="25.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="566.0" layoutY="45.0" text="Gestion Encuesta">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablaencuesta" layoutX="29.0" layoutY="126.0" onMouseClicked="#seleccionar" prefHeight="375.0" prefWidth="563.0" />
+      <TextField fx:id="fechactf" layoutX="750.0" layoutY="211.0" prefHeight="9.0" prefWidth="150.0" />
+      <TextField fx:id="fechamtf" layoutX="752.0" layoutY="245.0" prefHeight="5.0" prefWidth="150.0" />
+      <Label layoutX="676.0" layoutY="149.0" text="Numero :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="610.0" layoutY="181.0" prefHeight="21.0" prefWidth="180.0" text="Nombre Encuesta :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="213.0" text="Fecha Creacion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="609.0" layoutY="247.0" text="Fecha Modifiacion :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="numerotf" layoutX="754.0" layoutY="147.0" prefHeight="25.0" prefWidth="73.0" />
+      <TextField fx:id="nombretf" layoutX="754.0" layoutY="179.0" prefHeight="10.0" prefWidth="160.0" />
+      <Button fx:id="anadirbt" layoutX="475.0" layoutY="538.0" mnemonicParsing="false" onAction="#anadir" prefHeight="21.0" prefWidth="90.0" text="Añadir">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificarbt" layoutX="579.0" layoutY="538.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="90.0" text="Modificar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="consultarbt" layoutX="678.0" layoutY="538.0" mnemonicParsing="false" onAction="#consultar" prefHeight="25.0" prefWidth="90.0" text="Consultar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="limpiar" layoutX="780.0" layoutY="538.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="25.0" prefWidth="90.0" text="Limpiar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

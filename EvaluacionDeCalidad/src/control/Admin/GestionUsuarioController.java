@@ -41,7 +41,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  *
  * @author Cecilia Segura
  */
-public class GestionUserController implements Initializable {
+public class GestionUsuarioController implements Initializable {
  // Declaramos los botones
     @FXML private Button crearbt;
     @FXML private Button modificarbt;
@@ -114,7 +114,7 @@ public class GestionUserController implements Initializable {
                 try {
                     userbd.create(nuevo);
                 } catch (Exception ex) {
-                    Logger.getLogger(GestionUserController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(GestionUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }else{
                 mensaje2lb.setVisible(true);

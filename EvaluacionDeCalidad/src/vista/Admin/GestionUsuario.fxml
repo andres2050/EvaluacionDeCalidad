@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import Validaciones.* ?>
 
-<AnchorPane id="AnchorPane" prefHeight="512.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionUserController">
+<AnchorPane id="AnchorPane" prefHeight="512.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionUsuarioController">
    <children>
       <ImageView fitHeight="62.0" fitWidth="440.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>

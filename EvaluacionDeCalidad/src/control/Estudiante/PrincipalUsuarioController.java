@@ -47,6 +47,8 @@ public class PrincipalUsuarioController implements Initializable {
     private Label Espacio;
     @FXML
     private AnchorPane fondo;
+    @FXML
+    private Button CerrarSesion;
     
     //Se debe tener un arreglo de asignatura+grupo+profesor+encuesta con los datos de cada materia traida por el boton para poder decidir que accion tomar  
     
@@ -91,8 +93,10 @@ public class PrincipalUsuarioController implements Initializable {
             Materia[i].setText(null);
             Materia[i].setLayoutY(0);
             Espacio.setLayoutY(Espacio.getLayoutY()- 60);
+            CerrarSesion.setLayoutY(CerrarSesion.getLayoutY()-60);
         }
         
+        CerrarSesion.setStyle("-fx-font: 18 arial ; -fx-base: #ef3b46;");
         fondo.setStyle("-fx-background-image: url(/imagenes/fondousu.jpg); -fx-background-size: 100% 100%;");
     }
 
@@ -102,38 +106,38 @@ public class PrincipalUsuarioController implements Initializable {
         String Ruta = "Estudiante/Evaluacion.fxml";
         
         if(boton.equals("Materia1")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 0;
         }
         if(boton.equals("Materia2")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 1;
         }
         if(boton.equals("Materia3")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 2;
         }
         if(boton.equals("Materia4")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 3;
         }
         if(boton.equals("Materia5")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 4;
         }
         if(boton.equals("Materia6")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 5;
         }
         if(boton.equals("Materia7")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 6;
         }
         if(boton.equals("Materia8")){
-            new Activo().cambioAnchor(event, Ruta);
             Activo.botonActivo = 7;
         }
+        
+        new Activo().cambioAnchor(event, Ruta);
         //Un solo metodo De accion para los 8 botones, se reconoce la accion por medio de sus identificadores
+    }
+    
+    @FXML
+    private void AccionCerrarSesion(ActionEvent event) {
+        String Ruta = "IniciarSesion.fxml";
+        new Activo().cambioAnchor(event, Ruta);
     }
     
 }

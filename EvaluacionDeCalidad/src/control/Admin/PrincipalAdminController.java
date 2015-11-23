@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
 import vista.Activo;
@@ -63,12 +62,6 @@ public class PrincipalAdminController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-        
-   
-     
-        
         Gusuario.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
         Gasignatura.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
         Gdocente.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
@@ -85,7 +78,7 @@ public class PrincipalAdminController implements Initializable {
         Aasignatura.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
         Aencuesta.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
         Aestudiante.setStyle("-fx-font: 14 arial ; -fx-base: #d93434; -fx-border-color : #b82b2b");
-//        MenuPrincipal.setStyle("-fx-background-image: url(/imagenes/fondoadmi.jpg); -fx-background-size: 900px 600px;");
+        MenuPrincipal.setStyle("-fx-background-image: url(/imagenes/fondoadmi.jpg); -fx-background-size: 900px 600px;");
     }    
     
     @FXML
@@ -102,10 +95,12 @@ public class PrincipalAdminController implements Initializable {
     
     @FXML
     public void AccionaMacercade(ActionEvent event) {
-        JOptionPane.showMessageDialog(null, "Software desarrollado por: \n"
+        JOptionPane.showMessageDialog(null, "Software desarrollado por: \n \n"
                                             + "Andres Felipe Herrera \n"
                                             + "Juan David Eslava \n"
-                                            + "Oscar Eduardo Montes \n");
+                                            + "Kevin Collazos Rojas \n"
+                                            + "Nicolas Murillo \n"
+                                            + "Juan David De la Pava \n");
     }
 
     @FXML
@@ -153,7 +148,7 @@ public class PrincipalAdminController implements Initializable {
     @FXML
     private void accionAbloque(ActionEvent event) {
         String ruta = "Admin/Menu/AsignarBloque.fxml";
-        new Activo().cambioAnchor(event, ruta);
+        new Activo().cambioBorder(event, ruta);
     }
 
     @FXML

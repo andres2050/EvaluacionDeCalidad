@@ -60,6 +60,11 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="Espacio" layoutX="348.0" layoutY="634.0" text="Label" />
+      <Label fx:id="Espacio" layoutX="342.0" layoutY="687.0" text="Label" />
+      <Button fx:id="CerrarSesion" alignment="CENTER" layoutX="14.0" layoutY="613.0" mnemonicParsing="false" onAction="#AccionCerrarSesion" prefHeight="60.0" prefWidth="684.0" text="Cerrar Sesion" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

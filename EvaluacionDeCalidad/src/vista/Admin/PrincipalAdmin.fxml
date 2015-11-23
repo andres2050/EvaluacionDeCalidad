@@ -34,7 +34,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="Aasignatura" layoutX="456.0" layoutY="354.0" mnemonicParsing="false" onAction="#accionAasignatura" prefHeight="70.0" prefWidth="200.0" text="       Asignar Asignatura" AnchorPane.leftAnchor="456.0" />
+      <Button fx:id="Aasignatura" layoutX="456.0" layoutY="354.0" mnemonicParsing="false" onAction="#accionAasignatura" prefHeight="70.0" prefWidth="200.0" text="       Asignar Docente" AnchorPane.leftAnchor="456.0" />
       <Button fx:id="Aencuesta" layoutX="247.0" layoutY="435.0" mnemonicParsing="false" onAction="#accionAencuesta" prefHeight="70.0" prefWidth="200.0" text="     Asignar Encuesta" />
       <Button fx:id="Aestudiante" disable="true" layoutX="664.0" layoutY="435.0" mnemonicParsing="false" onAction="#AccionAestudiante" prefHeight="70.0" prefWidth="200.0" text="     Asignar Estudiante" />
       <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="258.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
@@ -64,7 +64,7 @@
       </ImageView>
       <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="464.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../imagenes/asignar%20materias.png" />
+            <Image url="@../../imagenes/maestros.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="673.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">

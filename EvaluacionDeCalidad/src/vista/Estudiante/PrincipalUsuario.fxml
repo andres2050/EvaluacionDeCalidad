@@ -63,8 +63,15 @@
       <Label fx:id="Espacio" layoutX="342.0" layoutY="687.0" text="Label" />
       <Button fx:id="CerrarSesion" alignment="CENTER" layoutX="14.0" layoutY="613.0" mnemonicParsing="false" onAction="#AccionCerrarSesion" prefHeight="60.0" prefWidth="684.0" text="Cerrar Sesion" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/cerrarseion.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

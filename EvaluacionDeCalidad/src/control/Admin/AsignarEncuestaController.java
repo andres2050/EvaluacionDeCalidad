@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
  * @author Cecilia Segura
  */
 public class AsignarEncuestaController implements Initializable {
-   // Declaramos los botones
+    // Declaramos los botones
     @FXML private Button asignarbt;
     @FXML private Button modificarbt;
   
@@ -33,45 +33,36 @@ public class AsignarEncuestaController implements Initializable {
     @FXML private TextField nencuestatf;
     @FXML private TextField casignaturatf;
     @FXML private TextField nasignaturatf;
-   
-  
 
-   // Declaramos la tabla y las columnas
-   @FXML
-   private TableView asignartb;
-   private TableColumn titulo;
-//   List<Tbtipo> results;
+    // Declaramos la tabla y las columnas
+    @FXML
+    private TableView asignartb;
+    private TableColumn titulo;
+    //   List<Tbtipo> results;
     
-    
-    
-    
-    
-    
-    
-
-    @FXML 
-      public void Buscardocente (ActionEvent event) throws Exception {
-          
-      }
-    
-      @FXML 
-      public void Buscarasignatura (ActionEvent event) throws Exception {
-          
-      }
-      @FXML 
-      public void Crearasignacion (ActionEvent event) throws Exception {
-          
-      }
-       @FXML 
-      public void Modificarasignacion(ActionEvent event) throws Exception {
-          
-      }
-       
-      
-      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
     
+    @FXML 
+    public void Buscardocente (ActionEvent event) throws Exception {
+          
+    }
+    
+    @FXML 
+    public void Buscarasignatura (ActionEvent event) throws Exception {
+          
+    }
+    
+    @FXML 
+    public void Crearasignacion (ActionEvent event) throws Exception {
+          
+    }
+    
+    @FXML 
+    public void Modificarasignacion(ActionEvent event) throws Exception {
+          
+    }
+
 }

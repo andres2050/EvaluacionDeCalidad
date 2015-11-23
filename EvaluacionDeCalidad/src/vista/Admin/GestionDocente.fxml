@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionDocenteController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionDocenteController">
    <children>
       <ImageView fitHeight="82.0" fitWidth="455.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -38,11 +38,6 @@
          </font>
       </Label>
       <Label layoutX="820.0" layoutY="260.0" text="*" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="1048.0" layoutY="218.0" text="*" textFill="RED">
          <font>
             <Font size="14.0" />
          </font>

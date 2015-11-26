@@ -7,6 +7,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import Validaciones.* ?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionDocenteController">
    <children>
@@ -25,12 +26,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="nombretf" layoutX="672.0" layoutY="216.0" promptText="Nombres" />
-      <TextField fx:id="apellidotf" layoutX="667.0" layoutY="257.0" promptText="Apellidos" />
-      <TextField fx:id="codigotf" layoutX="672.0" layoutY="168.0" promptText="Cedula" />
+      <ValidarTexto  fx:id="nombretf" layoutX="672.0" layoutY="216.0" promptText="Nombres" />
+      <ValidarTexto fx:id="apellidotf" layoutX="667.0" layoutY="257.0" promptText="Apellidos" />
+      <ValidarNumeros fx:id="codigotf" layoutX="672.0" layoutY="168.0" promptText="Cedula" />
       <Button fx:id="crearbt" layoutX="563.0" layoutY="479.0" mnemonicParsing="false" onAction="#crear" prefHeight="25.0" prefWidth="67.0" text="Crear" />
       <TextField fx:id="emailtf" layoutX="667.0" layoutY="295.0" promptText="Correo Electronico" />
-      <TextField fx:id="telefonotf" layoutX="667.0" layoutY="364.0" promptText="Telefono" />
+      <ValidarNumeros fx:id="telefonotf" layoutX="667.0" layoutY="364.0" promptText="Telefono" />
       <TextField fx:id="direcciontf" layoutX="667.0" layoutY="330.0" promptText="Direccion" />
       <Label layoutX="826.0" layoutY="219.0" text="*" textFill="RED">
          <font>

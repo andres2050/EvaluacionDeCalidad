@@ -7,6 +7,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import Validaciones.* ?>
 
 <AnchorPane id="AnchorPane" prefHeight="538.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.AsignarEncuestaController">
    <children>
@@ -15,22 +16,22 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="casignaturatf" layoutX="715.0" layoutY="216.0" promptText="Codigo Asignatura" />
+      <ValidarNumeros fx:id="casignaturatf" layoutX="715.0" layoutY="216.0" promptText="Codigo Asignatura" />
       <Button fx:id="buscar2bt" layoutX="879.0" layoutY="216.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Buscar" />
       <Label layoutX="559.0" layoutY="255.0" text="Nombre Asignatura :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="nasignaturatf" layoutX="715.0" layoutY="253.0" promptText="Nombre Asignatura" />
-      <TextField fx:id="nencuestatf" layoutX="715.0" layoutY="173.0" promptText="Nombre Docente" />
+      <ValidarTexto fx:id="nasignaturatf" layoutX="715.0" layoutY="253.0" promptText="Nombre Asignatura" />
+      <ValidarTexto fx:id="nencuestatf" layoutX="715.0" layoutY="173.0" promptText="Nombre Docente" />
       <Label layoutX="572.0" layoutY="175.0" text="Nombre Encuesta :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Button fx:id="buscar1bt" layoutX="879.0" layoutY="136.0" mnemonicParsing="false" onAction="#Buscardocente" text="Buscar" />
-      <TextField fx:id="cencuestatf" layoutX="715.0" layoutY="136.0" promptText="Numero Encuesta" />
+      <ValidarNumeros fx:id="cencuestatf" layoutX="715.0" layoutY="136.0" promptText="Numero Encuesta" />
       <Label layoutX="571.0" layoutY="138.0" text="Numero Encuesta :">
          <font>
             <Font name="System Bold" size="15.0" />

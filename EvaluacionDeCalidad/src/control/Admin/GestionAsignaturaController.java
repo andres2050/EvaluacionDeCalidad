@@ -79,7 +79,7 @@ public class GestionAsignaturaController implements Initializable {
 
     }
    
-   @FXML
+    @FXML
     public void modificar (ActionEvent event) throws Exception {
       
         EntityManager em = asignaturabd.getEntityManager();
@@ -100,11 +100,8 @@ public class GestionAsignaturaController implements Initializable {
        
     }
     
-      @FXML
+    @FXML
     public void seleccionar(MouseEvent event) {
-        codigo.setDisable(true);
-        crear.setDisable(true);
-        consultar.setDisable(true);
         tablamateria.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
             @Override
@@ -132,7 +129,10 @@ public class GestionAsignaturaController implements Initializable {
             }
 
         });
-        modificar.setDisable(true);
+        modificar.setDisable(false);
+        crear.setDisable(true);
+        consultar.setDisable(true);
+        codigo.setDisable(true);
     }
     
      
@@ -210,34 +210,25 @@ public class GestionAsignaturaController implements Initializable {
        consultar.setDisable(false);
        modificar.setDisable(true);
     }
-      
-   public void consultar (ActionEvent event) throws Exception {
+    
+    public void consultar (ActionEvent event) throws Exception {
        
         Tbasignatura asi = new Tbasignatura();
-        asi.setCodigo(codigo.getText());
-
-                  
-                    EntityManager em = asignaturabd.getEntityManager();
-                    TypedQuery<Tbasignatura> query = em.createNamedQuery( "Tbasignatura.findByCodigo", Tbasignatura.class);
-                    Tbasignatura asignatura = query.setParameter("codigo",asi.getCodigo()).getSingleResult();
-                    codigo.setText(asignatura.getCodigo());
-                    nombre.setText(asignatura.getNombre());
-                    fechac.setText(df1.format(asignatura.getFechacreacion()));
-                    String fecha = asignatura.getFechamodificacion() == null ? asignatura.getFechamodificacion()+"":df1.format(asignatura.getFechamodificacion());
-                    fecham.setText(fecha);
-                           
-        
-        
+        asi.setCodigo(codigo.getText());   
+        EntityManager em = asignaturabd.getEntityManager();
+        TypedQuery<Tbasignatura> query = em.createNamedQuery( "Tbasignatura.findByCodigo", Tbasignatura.class);
+        Tbasignatura asignatura = query.setParameter("codigo",asi.getCodigo()).getSingleResult();
+        codigo.setText(asignatura.getCodigo());
+        nombre.setText(asignatura.getNombre());
+        fechac.setText(df1.format(asignatura.getFechacreacion()));
+        String fecha = asignatura.getFechamodificacion() == null ? asignatura.getFechamodificacion()+"":df1.format(asignatura.getFechamodificacion());
+        fecham.setText(fecha);
         em.close();
      
    }
    
-   
-    
-   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         cargarDatosTabla();
         fechac.setDisable(true);
         fecham.setDisable(true);
@@ -246,6 +237,4 @@ public class GestionAsignaturaController implements Initializable {
         
     }    
 
-    
-    
 }

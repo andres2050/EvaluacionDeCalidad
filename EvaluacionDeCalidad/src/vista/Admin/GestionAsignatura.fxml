@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionAsignaturaController">
+<AnchorPane id="AnchorPane" prefHeight="565.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Admin.GestionAsignaturaController">
    <children>
       <TextField fx:id="fechac" layoutX="622.0" layoutY="288.0" prefHeight="25.0" prefWidth="180.0" />
       <TextField fx:id="fecham" layoutX="622.0" layoutY="362.0" prefHeight="21.0" prefWidth="180.0" />
@@ -30,17 +30,17 @@
       </Label>
       <TextField fx:id="codigo" layoutX="626.0" layoutY="157.0" prefHeight="25.0" prefWidth="73.0" />
       <TextField fx:id="nombre" layoutX="626.0" layoutY="219.0" prefHeight="21.0" prefWidth="180.0" />
-      <Button fx:id="crear" layoutX="577.0" layoutY="523.0" mnemonicParsing="false" onAction="#crear" prefHeight="21.0" prefWidth="90.0" text="Crear">
+      <Button fx:id="crear" layoutX="595.0" layoutY="440.0" mnemonicParsing="false" onAction="#crear" prefHeight="21.0" prefWidth="90.0" text="Crear">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="modificar" layoutX="681.0" layoutY="523.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="90.0" text="Modificar">
+      <Button fx:id="modificar" layoutX="712.0" layoutY="440.0" mnemonicParsing="false" onAction="#modificar" prefHeight="31.0" prefWidth="90.0" text="Modificar">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="consultar" layoutX="792.0" layoutY="523.0" mnemonicParsing="false" onAction="#consultar" prefHeight="25.0" prefWidth="90.0" text="Consultar">
+      <Button fx:id="consultar" layoutX="595.0" layoutY="499.0" mnemonicParsing="false" onAction="#consultar" prefHeight="25.0" prefWidth="90.0" text="Consultar">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -60,5 +60,10 @@
             <Image url="@../../imagenes/Logo.png" />
          </image>
       </ImageView>
+      <Button fx:id="limpiarbt" layoutX="716.0" layoutY="499.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="25.0" prefWidth="90.0" text="Limpiar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

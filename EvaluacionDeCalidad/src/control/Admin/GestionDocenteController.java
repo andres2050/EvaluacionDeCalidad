@@ -156,6 +156,7 @@ public class GestionDocenteController implements Initializable {
         crearbt.setDisable(true);
         consultarbt.setDisable(true);
         codigotf.setDisable(true);
+        modificarbt.setDisable(false);
          
     }
     

@@ -59,11 +59,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="823.0" layoutY="297.0" text="*" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Label layoutX="820.0" layoutY="333.0" text="*" textFill="RED">
          <font>
             <Font size="14.0" />

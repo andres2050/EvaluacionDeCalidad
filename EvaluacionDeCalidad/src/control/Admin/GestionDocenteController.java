@@ -30,7 +30,6 @@ import javafx.util.Callback;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import modelo.Tbprofesor;
-import modelo.Tbusuario;
 
 /**
  * FXML Controller class
@@ -92,14 +91,12 @@ public class GestionDocenteController implements Initializable {
                 cargarDatosTabla();
                 limpiar();
             }else{
-                cargarDatosTabla();
                 limpiar();
                 mensaje2.setVisible(true);
             }
             
             
         }else{
-            cargarDatosTabla();
             limpiar();
             mensaje.setVisible(true);
         }
@@ -125,7 +122,7 @@ public class GestionDocenteController implements Initializable {
         cargarDatosTabla();
         limpiar();
         
-         em.close();
+        em.close();
        
     }
     
@@ -147,21 +144,18 @@ public class GestionDocenteController implements Initializable {
                     codigotf.setText(profesor.getCedula().toString());
                     nombretf.setText(profesor.getNombre());
                     apellidotf.setText(profesor.getApellido());
-                      String email = profesor.getEmail() == null ? profesor.getEmail()+"": profesor.getEmail();
-String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"": profesor.getDireccion();
- String telefono = profesor.getTelefono() == null ? profesor.getTelefono()+"": profesor.getTelefono().toString();
+                    String email = profesor.getEmail() == null ? "": profesor.getEmail();
+                    String direccion = profesor.getDireccion() == null ? "": profesor.getDireccion();
+                    String telefono = profesor.getTelefono() == null ? "": profesor.getTelefono().toString();
                     telefonotf.setText(telefono);
                     emailtf.setText(email);
                     direcciontf.setText(direccion);
-                     
-                   
-                    
-                }
-
-               
+                }        
             }
-
         });
+        crearbt.setDisable(true);
+        consultarbt.setDisable(true);
+        codigotf.setDisable(true);
          
     }
     
@@ -237,14 +231,18 @@ String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"":
 
 
     public void limpiar() {
-    nombretf.setText("");
-    apellidotf.setText("");
-    codigotf.setText("");
-    telefonotf.setText("");
-    emailtf.setText("");
-    direcciontf.setText("");
-    mensaje.setVisible(false);
-    mensaje2.setVisible(false);
+        nombretf.setText("");
+        apellidotf.setText("");
+        codigotf.setText("");
+        telefonotf.setText("");
+        emailtf.setText("");
+        direcciontf.setText("");
+        mensaje.setVisible(false);
+        mensaje2.setVisible(false);
+        modificarbt.setDisable(true);
+        crearbt.setDisable(false);
+        consultarbt.setDisable(false);
+        codigotf.setDisable(false);
     }
    
       @FXML
@@ -253,43 +251,34 @@ String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"":
     }
     
     @FXML
-   public void consultar (ActionEvent event) throws Exception {
+    public void consultar (ActionEvent event) throws Exception {
        
         Tbprofesor pre = new Tbprofesor();
-                   pre.setCedula(new BigDecimal(codigotf.getText()));
-
-                  
-                    EntityManager em = profesorbd.getEntityManager();
-                    TypedQuery<Tbprofesor> query = em.createNamedQuery("Tbprofesor.findByCedula", Tbprofesor.class);
-                    Tbprofesor profesor= query.setParameter("cedula",pre.getCedula()).getSingleResult();
-                    codigotf.setText(profesor.getCedula().toString());
-                    nombretf.setText(profesor.getNombre());
-                    apellidotf.setText(profesor.getApellido());
-                     String email = profesor.getEmail() == null ? profesor.getEmail()+"": profesor.getEmail();
-String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"": profesor.getDireccion();
- String telefono = profesor.getTelefono() == null ? profesor.getTelefono()+"": profesor.getTelefono().toString();
-                    telefonotf.setText(telefono );
-                    emailtf.setText(email );
-                    direcciontf.setText(direccion);
-       
-        
+        pre.setCedula(new BigDecimal(codigotf.getText()));    
+        EntityManager em = profesorbd.getEntityManager();
+        TypedQuery<Tbprofesor> query = em.createNamedQuery("Tbprofesor.findByCedula", Tbprofesor.class);
+        Tbprofesor profesor= query.setParameter("cedula",pre.getCedula()).getSingleResult();
+        codigotf.setText(profesor.getCedula().toString());
+        nombretf.setText(profesor.getNombre());
+        apellidotf.setText(profesor.getApellido());
+        String email = profesor.getEmail() == null ? profesor.getEmail()+"": profesor.getEmail();
+        String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"": profesor.getDireccion();
+        String telefono = profesor.getTelefono() == null ? profesor.getTelefono()+"": profesor.getTelefono().toString();
+        telefonotf.setText(telefono );
+        emailtf.setText(email );
+        direcciontf.setText(direccion);
         em.close();
      
-   }
-   
-   
-    
-   
-   
-   
-   
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-      cargarDatosTabla();
-      mensaje.setVisible(false);
-      mensaje2.setVisible(false);
+        cargarDatosTabla();
+        mensaje.setVisible(false);
+        mensaje2.setVisible(false);
+        modificarbt.setDisable(true);
     }    
     
 }

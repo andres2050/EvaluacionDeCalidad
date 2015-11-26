@@ -27,30 +27,20 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ValidarNumeros fx:id="cdocentetf" layoutX="705.0" layoutY="126.0" promptText="Codigo Docente" />
-      <Button fx:id="buscar1bt" layoutX="869.0" layoutY="126.0" mnemonicParsing="false" onAction="#Buscardocente" text="Buscar" />
-      <Label layoutX="562.0" layoutY="165.0" text="Nombre Docente :">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <ValidarTexto fx:id="ndocentetf" layoutX="705.0" layoutY="163.0" promptText="Nombre Docente" />
-      <ValidarTexto fx:id="nasignaturatf" layoutX="705.0" layoutY="243.0" promptText="Nombre Asignatura" />
-      <Label layoutX="549.0" layoutY="245.0" text="Nombre Asignatura :">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="buscar2bt" layoutX="869.0" layoutY="206.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Buscar" />
-      <ValidarNumeros fx:id="casignaturatf" layoutX="705.0" layoutY="206.0" promptText="Codigo Asignatura" />
+      <TextField fx:id="cdocentetf" layoutX="705.0" layoutY="126.0" promptText="Codigo Docente" />
+      <Button fx:id="cargar1bt" layoutX="869.0" layoutY="126.0" mnemonicParsing="false" onAction="#Buscardocente" text="Cargar" />
+      <Button fx:id="cargar2bt" layoutX="869.0" layoutY="206.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Cargar" />
+      <TextField fx:id="casignaturatf" layoutX="705.0" layoutY="206.0" promptText="Codigo Asignatura" />
       <Label layoutX="553.0" layoutY="208.0" text="Codigo Asignatura :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="asignarbt" layoutX="571.0" layoutY="469.0" mnemonicParsing="false" onAction="#Crearasignacion" prefHeight="25.0" prefWidth="107.0" text="Asignar " />
-      <Button fx:id="modificarbt" layoutX="705.0" layoutY="469.0" mnemonicParsing="false" onAction="#Modificarasignacion" prefHeight="25.0" prefWidth="98.0" text="Modificar " />
-      <ValidarTexto fx:id="cupotf" layoutX="705.0" layoutY="281.0" promptText="Cupo" />
+      <Button fx:id="asignarbt" layoutX="586.0" layoutY="395.0" mnemonicParsing="false" onAction="#Crearasignacion" prefHeight="25.0" prefWidth="107.0" text="Asignar " />
+      <Button fx:id="modificarbt" layoutX="820.0" layoutY="395.0" mnemonicParsing="false" onAction="#Modificarasignacion" prefHeight="25.0" prefWidth="98.0" text="Modificar " />
+      <TextField fx:id="cupotf" layoutX="705.0" layoutY="281.0" promptText="Cupo" />
       <ComboBox fx:id="grupocb" layoutX="705.0" layoutY="322.0" prefWidth="150.0" promptText="Grupo" />
+      <Button fx:id="cargar3bt" layoutX="816.0" layoutY="469.0" mnemonicParsing="false" onAction="#cargarDatosTabla" prefHeight="25.0" prefWidth="107.0" text="Cargar" />
+      <Button fx:id="limpiarbt" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="25.0" prefWidth="107.0" text="Limpiar" />
    </children>
 </AnchorPane>

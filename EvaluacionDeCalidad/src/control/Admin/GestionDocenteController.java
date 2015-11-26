@@ -150,13 +150,14 @@ public class GestionDocenteController implements Initializable {
                     telefonotf.setText(telefono);
                     emailtf.setText(email);
                     direcciontf.setText(direccion);
+                    crearbt.setDisable(true);
+                    consultarbt.setDisable(true);
+                    codigotf.setDisable(true);
+                    modificarbt.setDisable(false);
                 }        
             }
         });
-        crearbt.setDisable(true);
-        consultarbt.setDisable(true);
-        codigotf.setDisable(true);
-        modificarbt.setDisable(false);
+        
          
     }
     

@@ -120,7 +120,10 @@ public class GestionAsignaturaController implements Initializable {
                     fechac.setText(df1.format(asignatura.getFechacreacion()));
                     String fecha = asignatura.getFechamodificacion() == null ? asignatura.getFechamodificacion()+"":df1.format(asignatura.getFechamodificacion());
                     fecham.setText(fecha);
-                     
+                    modificar.setDisable(false);
+                    crear.setDisable(true);
+                    consultar.setDisable(true);
+                    codigo.setDisable(true);
                    
                     //lo mismo con todo los campos
                 }
@@ -129,10 +132,7 @@ public class GestionAsignaturaController implements Initializable {
             }
 
         });
-        modificar.setDisable(false);
-        crear.setDisable(true);
-        consultar.setDisable(true);
-        codigo.setDisable(true);
+        
     }
     
      

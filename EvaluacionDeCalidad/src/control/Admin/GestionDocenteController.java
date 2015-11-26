@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,6 +30,7 @@ import javafx.util.Callback;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import modelo.Tbprofesor;
+import modelo.Tbusuario;
 
 /**
  * FXML Controller class
@@ -49,6 +51,8 @@ public class GestionDocenteController implements Initializable {
     @FXML private TextField telefonotf;
     @FXML private TextField emailtf;
     @FXML private TextField direcciontf;
+    @FXML private Label mensaje;
+    @FXML private Label mensaje2;
     
     
     
@@ -61,23 +65,44 @@ public class GestionDocenteController implements Initializable {
    ObservableList<ObservableList> tbprofesor;
    Tbprofesor prefesor  = new Tbprofesor();
    TbprofesorJpaController profesorbd = new TbprofesorJpaController(); 
+   List<Tbprofesor> results;
    
        
       @FXML 
       public void crear (ActionEvent event) throws Exception {
         
         Tbprofesor nuevo= new Tbprofesor();
-        nuevo.setCedula(new BigDecimal(codigotf.getText()));
-        nuevo.setNombre(nombretf.getText());
-        nuevo.setApellido(apellidotf.getText());
-        nuevo.setEmail(emailtf.getText());
-        nuevo.setDireccion(direcciontf.getText());
-        nuevo.setTelefono(Integer.parseInt(telefonotf.getText()));
-       
-        profesorbd.create(nuevo);
-        cargarDatosTabla();
-        limpiar();
-          
+        
+        if(!codigotf.getText().isEmpty() && !nombretf.getText().isEmpty() && !apellidotf.getText().isEmpty() && !direcciontf.getText().isEmpty() && !telefonotf.getText().isEmpty()){
+            nuevo.setCedula(new BigDecimal(codigotf.getText()));
+            EntityManager em = profesorbd.getEntityManager();
+            TypedQuery<Tbprofesor> query = em.createNamedQuery("Tbprofesor.findByCedula", Tbprofesor.class);
+//            System.out.println(query);
+            List<Tbprofesor> results2 = query.setParameter("cedula", nuevo.getCedula()).getResultList();
+//            System.out.println(results);
+            em.close();
+            if(results2.isEmpty()){
+                nuevo.setNombre(nombretf.getText());
+                nuevo.setApellido(apellidotf.getText());
+                nuevo.setEmail(emailtf.getText());
+                nuevo.setDireccion(direcciontf.getText());
+                nuevo.setTelefono(Integer.parseInt(telefonotf.getText()));
+
+                profesorbd.create(nuevo);
+                cargarDatosTabla();
+                limpiar();
+            }else{
+                cargarDatosTabla();
+                limpiar();
+                mensaje2.setVisible(true);
+            }
+            
+            
+        }else{
+            cargarDatosTabla();
+            limpiar();
+            mensaje.setVisible(true);
+        }
 
     }
     
@@ -146,7 +171,7 @@ String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"":
         tabladocente.getColumns().clear();
         EntityManager em = profesorbd.getEntityManager();
         TypedQuery<Tbprofesor> query = em.createNamedQuery("Tbprofesor.findAll", Tbprofesor.class);
-        List<Tbprofesor> results = query.getResultList();
+        results = query.getResultList();
 
         String[] titulos = {
             "Cedula",
@@ -218,18 +243,13 @@ String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"":
     telefonotf.setText("");
     emailtf.setText("");
     direcciontf.setText("");
+    mensaje.setVisible(false);
+    mensaje2.setVisible(false);
     }
    
       @FXML
     public void limpiar (ActionEvent event) throws Exception {
-   nombretf.setText("");
-    apellidotf.setText("");
-    codigotf.setText("");
-    telefonotf.setText("");
-    emailtf.setText("");
-    direcciontf.setText("");
-//       @FXML private Button limpiar;
-       
+        limpiar();
     }
     
     @FXML
@@ -268,6 +288,8 @@ String direccion = profesor.getDireccion() == null ? profesor.getDireccion()+"":
         // TODO
         
       cargarDatosTabla();
+      mensaje.setVisible(false);
+      mensaje2.setVisible(false);
     }    
     
 }

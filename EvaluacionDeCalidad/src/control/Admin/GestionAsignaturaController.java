@@ -66,12 +66,14 @@ public class GestionAsignaturaController implements Initializable {
     public void crear (ActionEvent event) throws Exception {
             
         Tbasignatura nueva = new Tbasignatura();
-        nueva.setCodigo(codigo.getText());
-        nueva.setNombre(nombre.getText().trim().toUpperCase());
-        nueva.setFechacreacion(fecha);
-     
-   
-        asignaturabd.create(nueva);
+        if(!codigo.getText().isEmpty() && !nombre.getText().isEmpty()){
+            nueva.setCodigo(codigo.getText());
+            nueva.setNombre(nombre.getText().trim().toUpperCase());
+            nueva.setFechacreacion(fecha);
+            asignaturabd.create(nueva);
+            
+        }
+        
         cargarDatosTabla();
         limpiar();
 
@@ -130,7 +132,7 @@ public class GestionAsignaturaController implements Initializable {
             }
 
         });
-       
+        modificar.setDisable(true);
     }
     
      
@@ -206,6 +208,7 @@ public class GestionAsignaturaController implements Initializable {
        codigo.setDisable(false);
        crear.setDisable(false);
        consultar.setDisable(false);
+       modificar.setDisable(true);
     }
       
    public void consultar (ActionEvent event) throws Exception {
@@ -238,6 +241,7 @@ public class GestionAsignaturaController implements Initializable {
         cargarDatosTabla();
         fechac.setDisable(true);
         fecham.setDisable(true);
+        modificar.setDisable(true);
         
         
     }    

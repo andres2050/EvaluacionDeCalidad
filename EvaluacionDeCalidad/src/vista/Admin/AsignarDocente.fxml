@@ -20,7 +20,7 @@
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
-      <TableView fx:id="asignartb" layoutX="21.0" layoutY="116.0" prefHeight="378.0" prefWidth="501.0" />
+      <TableView fx:id="asignartb" layoutX="21.0" layoutY="116.0" onMouseClicked="#seleccionardocente" prefHeight="378.0" prefWidth="501.0" />
       <Label layoutX="571.0" layoutY="128.0" text="Codigo Docente :">
          <font>
             <Font name="System Bold" size="15.0" />

@@ -18,8 +18,6 @@ public class ValidarCorreo extends TextField  {
  
      
     public ValidarCorreo(){
-        this.setPromptText("Entrodusca su correo");
-    
     }
     
     @Override

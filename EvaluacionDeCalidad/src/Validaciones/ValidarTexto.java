@@ -15,8 +15,6 @@ import javafx.scene.control.TextField;
 public class ValidarTexto extends TextField  {
     
     public ValidarTexto(){
-        this.setPromptText("Entrodusca su nombre");
-    
     }
     
     @Override

@@ -30,7 +30,7 @@
          </font>
       </Label>
       <ValidarNumeros fx:id="codigo" layoutX="626.0" layoutY="157.0" prefHeight="25.0" prefWidth="73.0" />
-      <ValidarTextofx:id="nombre" layoutX="626.0" layoutY="219.0" prefHeight="21.0" prefWidth="180.0" />
+      <ValidarTexto fx:id="nombre" layoutX="626.0" layoutY="219.0" prefHeight="21.0" prefWidth="180.0" />
       <Button fx:id="crear" layoutX="595.0" layoutY="440.0" mnemonicParsing="false" onAction="#crear" prefHeight="21.0" prefWidth="90.0" text="Crear">
          <font>
             <Font name="System Bold" size="15.0" />

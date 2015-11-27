@@ -270,6 +270,10 @@ public class GestionDocenteController implements Initializable {
         emailtf.setText(email );
         direcciontf.setText(direccion);
         em.close();
+        crearbt.setDisable(true);
+        consultarbt.setDisable(true);
+        codigotf.setDisable(true);
+        modificarbt.setDisable(false);
      
     }
 
@@ -277,10 +281,10 @@ public class GestionDocenteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        cargarDatosTabla();
-        mensaje.setVisible(false);
-        mensaje2.setVisible(false);
-        modificarbt.setDisable(true);
+//        cargarDatosTabla();
+//        mensaje.setVisible(false);
+//        mensaje2.setVisible(false);
+//        modificarbt.setDisable(true);
     }    
     
 }

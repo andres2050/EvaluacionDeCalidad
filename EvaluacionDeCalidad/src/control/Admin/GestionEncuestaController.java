@@ -37,11 +37,10 @@ import modelo.Tbencuesta;
  * @author Cecilia Segura
  */
 public class GestionEncuestaController implements Initializable {
-// Declaramos los botones
-    @FXML private Button aniadirbt;
+    // Declaramos los botones
     @FXML private Button modificarbt;
     @FXML private Button consultarbt;
-   @FXML private Button limpiar;
+    @FXML private Button limpiar;
     
     
     // Declaramos los textfileds
@@ -50,40 +49,33 @@ public class GestionEncuestaController implements Initializable {
     @FXML private TextField fechactf;
     @FXML private TextField fechamtf;
     
-   // Declaramos la tabla y las columnas
-   @FXML
-   private TableView tablaencuesta;
-   private TableColumn titulo;
+    // Declaramos la tabla y las columnas
+    @FXML
+    private TableView tablaencuesta;
+    private TableColumn titulo;
    
-   //Otros
-   ObservableList<ObservableList> tbencuesta;
-   Tbencuesta encuesta = new Tbencuesta();
-   TbencuestaJpaController encuestabd = new TbencuestaJpaController(); 
-   Date fecha = new Date();
-   DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
- 
-   
-   
-
-   
-
+    //Otros
+    ObservableList<ObservableList> tbencuesta;
+    Tbencuesta encuesta = new Tbencuesta();
+    TbencuestaJpaController encuestabd = new TbencuestaJpaController(); 
+    Date fecha = new Date();
+    DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+    @FXML
+    private Button anadirbt;
 
  
    
-      @FXML 
-      public void anadir (ActionEvent event) throws Exception {
+    @FXML 
+    public void anadir (ActionEvent event) throws Exception {
         
-              
-        Tbencuesta nueva = new Tbencuesta();
-        nueva.setId(Integer.valueOf(numerotf.getText()));
-        nueva.setNombre(nombretf.getText().trim().toUpperCase());
-        nueva.setFechacreacion(fecha);
-     
-   
-        encuestabd.create(nueva);
-        cargarDatosTabla();
-        limpiar();
-
+        if(!nombretf.getText().isEmpty()){      
+            Tbencuesta nueva = new Tbencuesta();
+            nueva.setNombre(nombretf.getText().trim().toUpperCase());
+            nueva.setFechacreacion(fecha);
+            encuestabd.create(nueva);
+            cargarDatosTabla();
+            limpiar();
+        }
     }
    
    @FXML
@@ -101,15 +93,13 @@ public class GestionEncuestaController implements Initializable {
         
      
         encuestabd.edit(nueva);
+        em.close();
         cargarDatosTabla();
         limpiar();
-        numerotf.setDisable(false);
-        fechactf.setDisable(false);
-        em.close();
        
     }
     
-      @FXML
+    @FXML
     public void seleccionar(MouseEvent event) {
         tablaencuesta.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
@@ -129,7 +119,8 @@ public class GestionEncuestaController implements Initializable {
                     fechactf.setText(df1.format(encuesta.getFechacreacion()));
                     String fecha = encuesta.getFechamodificacion() == null ? encuesta.getFechamodificacion()+"":df1.format(encuesta.getFechamodificacion());
                     fechamtf.setText(fecha);
-                     
+                    anadirbt.setDisable(true);
+                    consultarbt.setDisable(true);
                    
                     //lo mismo con todo los campos
                 }
@@ -140,9 +131,7 @@ public class GestionEncuestaController implements Initializable {
         });
        
     }
-    
-     
-  
+
     private void cargarDatosTabla() {
         tablaencuesta.getColumns().clear();
         EntityManager em = encuestabd.getEntityManager();
@@ -211,49 +200,36 @@ public class GestionEncuestaController implements Initializable {
        nombretf.setText("");
        fechactf.setText("");
        fechamtf.setText("");
+       anadirbt.setDisable(false);
+       consultarbt.setDisable(false);
+       modificarbt.setDisable(true);
     }
-
-       @FXML
-    public void limpiar (ActionEvent event) throws Exception {
-     numerotf.setText("");
-       nombretf.setText("");
-       fechactf.setText("");
-       fechamtf.setText("");
-//       @FXML private Button limpiar;
-       
-    }
-    
   
-    
+    @FXML
    public void consultar (ActionEvent event) throws Exception {
        
         Tbencuesta encu = new Tbencuesta();
-        encu.setId(Integer.valueOf(numerotf.getText()));
-
-                  
-                    EntityManager em = encuestabd.getEntityManager();
-                    TypedQuery<Tbencuesta> query = em.createNamedQuery("Tbencuesta.findById", Tbencuesta.class);
-                    Tbencuesta encuest = query.setParameter("id",encu.getId()).getSingleResult();
-                    numerotf.setText(encuest.getId().toString());
-                    nombretf.setText(encuest.getNombre());
-                    fechactf.setText(df1.format(encuest.getFechacreacion()));
-                    String fecha = encuest.getFechamodificacion() == null ? encuest.getFechamodificacion()+"":df1.format(encuest.getFechamodificacion());
-                    fechamtf.setText(fecha);
-                           
-        
-        
+        encu.setId(Integer.valueOf(numerotf.getText()));   
+        EntityManager em = encuestabd.getEntityManager();
+        TypedQuery<Tbencuesta> query = em.createNamedQuery("Tbencuesta.findById", Tbencuesta.class);
+        Tbencuesta encuest = query.setParameter("id",encu.getId()).getSingleResult();
+        numerotf.setText(encuest.getId().toString());
+        nombretf.setText(encuest.getNombre());
+        fechactf.setText(df1.format(encuest.getFechacreacion()));
+        String fecha = encuest.getFechamodificacion() == null ? encuest.getFechamodificacion()+"":df1.format(encuest.getFechamodificacion());
+        fechamtf.setText(fecha);
         em.close();
      
    }
-   
-   
-    
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         cargarDatosTabla();
-        
+        limpiar();
+        fechactf.setDisable(true);
+        fechamtf.setDisable(true);
+        numerotf.setDisable(true);
         
     }    
 

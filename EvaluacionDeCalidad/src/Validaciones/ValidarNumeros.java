@@ -15,7 +15,6 @@ import javafx.scene.control.TextField;
 public class ValidarNumeros extends TextField {
     
     public ValidarNumeros(){
-       this.setPromptText("Entra solo numeros");
     }
     
     

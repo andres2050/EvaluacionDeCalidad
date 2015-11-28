@@ -40,7 +40,7 @@ public class GestionEncuestaController implements Initializable {
     // Declaramos los botones
     @FXML private Button modificarbt;
     @FXML private Button consultarbt;
-    @FXML private Button limpiar;
+    @FXML private Button limpiarbt;
     
     
     // Declaramos los textfileds

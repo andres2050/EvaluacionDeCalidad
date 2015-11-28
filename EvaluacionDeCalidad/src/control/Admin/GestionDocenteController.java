@@ -281,10 +281,10 @@ public class GestionDocenteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-//        cargarDatosTabla();
-//        mensaje.setVisible(false);
-//        mensaje2.setVisible(false);
-//        modificarbt.setDisable(true);
+        cargarDatosTabla();
+        mensaje.setVisible(false);
+        mensaje2.setVisible(false);
+        modificarbt.setDisable(true);
     }    
     
 }

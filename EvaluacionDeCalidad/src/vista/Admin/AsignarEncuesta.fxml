@@ -16,28 +16,16 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ValidarNumeros fx:id="casignaturatf" layoutX="715.0" layoutY="216.0" promptText="Codigo Asignatura" />
-      <Button fx:id="buscar2bt" layoutX="879.0" layoutY="216.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Buscar" />
-      <Label layoutX="559.0" layoutY="255.0" text="Nombre Asignatura :">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <ValidarTexto fx:id="nasignaturatf" layoutX="715.0" layoutY="253.0" promptText="Nombre Asignatura" />
-      <ValidarTexto fx:id="nencuestatf" layoutX="715.0" layoutY="173.0" promptText="Nombre Docente" />
-      <Label layoutX="572.0" layoutY="175.0" text="Nombre Encuesta :">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="buscar1bt" layoutX="879.0" layoutY="136.0" mnemonicParsing="false" onAction="#Buscardocente" text="Buscar" />
-      <ValidarNumeros fx:id="cencuestatf" layoutX="715.0" layoutY="136.0" promptText="Numero Encuesta" />
+      <ComboBox fx:id="casignaturacb" layoutX="715.0" layoutY="216.0" promptText="Codigo Asignatura" />
+      <Button fx:id="buscar2bt" layoutX="879.0" layoutY="216.0" mnemonicParsing="false" onAction="#Buscarasignatura" text="Cargar" />
+      <Button fx:id="buscar1bt" layoutX="879.0" layoutY="136.0" mnemonicParsing="false" onAction="#Buscardocente" text="Cargar" />
+      <ComboBox fx:id="cencuestacb" layoutX="715.0" layoutY="136.0" promptText="Numero Encuesta" />
       <Label layoutX="571.0" layoutY="138.0" text="Numero Encuesta :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TableView fx:id="encuestatb" layoutX="31.0" layoutY="126.0" prefHeight="378.0" prefWidth="501.0" />
+      <TableView fx:id="encuestatb" layoutX="31.0" layoutY="126.0" onMouseClicked="#seleccionar" prefHeight="378.0" prefWidth="501.0" />
       <Label layoutX="615.0" layoutY="38.0" prefHeight="43.0" prefWidth="298.0" text="Asignar Encuesta">
          <font>
             <Font name="System Bold" size="37.0" />
@@ -48,7 +36,9 @@
             <Image url="@../../imagenes/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="modificarbt" layoutX="715.0" layoutY="479.0" mnemonicParsing="false" onAction="#Modificarasignacion" prefHeight="25.0" prefWidth="98.0" text="Modificar " />
-      <Button fx:id="asignarbt" layoutX="581.0" layoutY="479.0" mnemonicParsing="false" onAction="#Crearasignacion" prefHeight="25.0" prefWidth="107.0" text="Asignar " />
+      <Button fx:id="modificarbt" layoutX="715.0" layoutY="389.0" mnemonicParsing="false" onAction="#Modificarasignacion" prefHeight="25.0" prefWidth="98.0" text="Modificar " />
+      <Button fx:id="asignarbt" layoutX="571.0" layoutY="389.0" mnemonicParsing="false" onAction="#Crearasignacion" prefHeight="25.0" prefWidth="107.0" text="Asignar " />
+      <Button fx:id="limpiarbt" layoutX="715.0" layoutY="479.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="25.0" prefWidth="98.0" text="Limpiar" />
+      <Button fx:id="cargarbt" layoutX="832.0" layoutY="389.0" mnemonicParsing="false" onAction="#cargarDatosTabla" prefHeight="25.0" prefWidth="98.0" text="Cargar" />
    </children>
 </AnchorPane>

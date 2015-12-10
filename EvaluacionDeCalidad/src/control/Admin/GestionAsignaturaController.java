@@ -21,6 +21,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -42,7 +43,6 @@ public class GestionAsignaturaController implements Initializable {
     @FXML private Button crear;
     @FXML private Button modificar;
     @FXML private Button consultar;
-    @FXML private Button limpiar;
     
     // Declaramos los textfileds
     @FXML private TextField codigo;
@@ -61,6 +61,12 @@ public class GestionAsignaturaController implements Initializable {
    TbasignaturaJpaController asignaturabd = new TbasignaturaJpaController(); 
    Date fecha = new Date();
    DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+    @FXML
+    private Button limpiarbt;
+    @FXML
+    private Label mensaje2;
+    @FXML
+    private Label mensaje;
    
     @FXML 
     public void crear (ActionEvent event) throws Exception {
@@ -68,20 +74,27 @@ public class GestionAsignaturaController implements Initializable {
         Tbasignatura nueva = new Tbasignatura();
         if(!codigo.getText().isEmpty() && !nombre.getText().isEmpty()){
             nueva.setCodigo(codigo.getText());
-            nueva.setNombre(nombre.getText().trim().toUpperCase());
-            nueva.setFechacreacion(fecha);
-            asignaturabd.create(nueva);
-            
+            EntityManager em = asignaturabd.getEntityManager();
+            TypedQuery<Tbasignatura> query2 = em.createNamedQuery("Tbasignatura.findByCodigo", Tbasignatura.class);
+            List<Tbasignatura> result = query2.setParameter("codigo", nueva.getCodigo()).getResultList();
+            em.close();
+            if(result.isEmpty()){
+                nueva.setNombre(nombre.getText().trim().toUpperCase());
+                nueva.setFechacreacion(fecha);
+                asignaturabd.create(nueva);
+            }else{
+                mensaje2.setVisible(true);
+            }
+        }else{
+            mensaje.setVisible(true);
         }
         
-        cargarDatosTabla();
-        limpiar();
 
     }
    
     @FXML
     public void modificar (ActionEvent event) throws Exception {
-      
+        if(!codigo.getText().isEmpty() && !nombre.getText().isEmpty()){
         EntityManager em = asignaturabd.getEntityManager();
         Tbasignatura modi = new Tbasignatura();
         modi.setCodigo(codigo.getText());
@@ -96,8 +109,11 @@ public class GestionAsignaturaController implements Initializable {
         cargarDatosTabla();
         limpiar();
         
-       em.close();
-       
+        em.close();
+        }else{
+            mensaje.setVisible(true);
+        }
+      
     }
     
     @FXML
@@ -209,8 +225,13 @@ public class GestionAsignaturaController implements Initializable {
        crear.setDisable(false);
        consultar.setDisable(false);
        modificar.setDisable(true);
+       mensaje.setVisible(false);
+       mensaje2.setVisible(false);
+       fechac.setDisable(true);
+       fecham.setDisable(true);
     }
     
+    @FXML
     public void consultar (ActionEvent event) throws Exception {
        
         Tbasignatura asi = new Tbasignatura();
@@ -230,11 +251,7 @@ public class GestionAsignaturaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cargarDatosTabla();
-        fechac.setDisable(true);
-        fecham.setDisable(true);
-        modificar.setDisable(true);
-        
-        
+        limpiar();
     }    
 
 }

@@ -21,6 +21,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -40,7 +41,6 @@ public class GestionEncuestaController implements Initializable {
     // Declaramos los botones
     @FXML private Button modificarbt;
     @FXML private Button consultarbt;
-    @FXML private Button limpiarbt;
     
     
     // Declaramos los textfileds
@@ -62,41 +62,56 @@ public class GestionEncuestaController implements Initializable {
     DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
     @FXML
     private Button anadirbt;
+    @FXML
+    private Button limpiar;
+    @FXML
+    private Label mensaje2;
 
  
    
     @FXML 
     public void anadir (ActionEvent event) throws Exception {
         
-        if(!nombretf.getText().isEmpty()){      
+        if(!nombretf.getText().isEmpty()){
             Tbencuesta nueva = new Tbencuesta();
             nueva.setNombre(nombretf.getText().trim().toUpperCase());
-            nueva.setFechacreacion(fecha);
-            encuestabd.create(nueva);
-            cargarDatosTabla();
-            limpiar();
+            EntityManager em = encuestabd.getEntityManager();
+            TypedQuery<Tbencuesta> query = em.createNamedQuery("Tbencuesta.findByNombre", Tbencuesta.class);
+            List<Tbencuesta> results = query.setParameter("nombre".trim().toUpperCase(),nueva.getNombre()).getResultList();
+            em.close();
+            
+            if(results.isEmpty()){
+                nueva.setFechacreacion(fecha);
+                encuestabd.create(nueva);
+                cargarDatosTabla();
+                limpiar();
+            }else{
+                limpiar();
+                mensaje2.setVisible(true);
+            }
+
+            
         }
     }
    
    @FXML
     public void modificar (ActionEvent event) throws Exception {
-        numerotf.setDisable(true);
-        fechactf.setDisable(true);
-        EntityManager em = encuestabd.getEntityManager();
-        Tbencuesta nueva = new Tbencuesta();
-        nueva.setId(Integer.valueOf(numerotf.getText()));
-        
-        TypedQuery<Tbencuesta> query = em.createNamedQuery("Tbencuesta.findById", Tbencuesta.class);
-        nueva = query.setParameter("id", nueva.getId()).getSingleResult();
-        nueva.setNombre(nombretf.getText().trim().toUpperCase());
-        nueva.setFechamodificacion(fecha);
-        
-     
-        encuestabd.edit(nueva);
-        em.close();
-        cargarDatosTabla();
-        limpiar();
-       
+        if(!nombretf.getText().isEmpty()){    
+            EntityManager em = encuestabd.getEntityManager();
+            Tbencuesta nueva = new Tbencuesta();
+            nueva.setId(Integer.valueOf(numerotf.getText()));
+
+            TypedQuery<Tbencuesta> query = em.createNamedQuery("Tbencuesta.findById", Tbencuesta.class);
+            nueva = query.setParameter("id", nueva.getId()).getSingleResult();
+            nueva.setNombre(nombretf.getText().trim().toUpperCase());
+            nueva.setFechamodificacion(fecha);
+
+
+            encuestabd.edit(nueva);
+            em.close();
+            cargarDatosTabla();
+            limpiar();
+        }
     }
     
     @FXML
@@ -203,6 +218,7 @@ public class GestionEncuestaController implements Initializable {
        anadirbt.setDisable(false);
        consultarbt.setDisable(false);
        modificarbt.setDisable(true);
+       mensaje2.setVisible(false);
     }
   
     @FXML

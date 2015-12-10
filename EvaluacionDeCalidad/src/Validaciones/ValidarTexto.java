@@ -19,7 +19,7 @@ public class ValidarTexto extends TextField  {
     
     @Override
     public void replaceText(int i,int il,String string){
-    if(string.matches("[a-zA-Z]")|| string.isEmpty()){
+    if(string.matches("[a-zA-Z *]+$")|| string.isEmpty()){
         super.replaceText(i, il, string);
        
     } 

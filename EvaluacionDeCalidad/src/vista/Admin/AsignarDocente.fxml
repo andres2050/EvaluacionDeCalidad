@@ -41,5 +41,11 @@
       <ValidarNumeros fx:id="cupotf" layoutX="705.0" layoutY="281.0" promptText="Cupo" />
       <ComboBox fx:id="grupocb" layoutX="705.0" layoutY="322.0" prefWidth="150.0" promptText="Grupo" />
       <Button fx:id="cargar3bt" layoutX="816.0" layoutY="469.0" mnemonicParsing="false" onAction="#cargarDatosTabla" prefHeight="25.0" prefWidth="107.0" text="Cargar" />
+      <Label fx:id="mensaje2" layoutX="692.0" layoutY="427.0" text="Asignacion ya existe" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="652.0" layoutY="99.0" text="Todos los Campos son OBLIGATORIOS" textFill="RED" />
    </children>
 </AnchorPane>

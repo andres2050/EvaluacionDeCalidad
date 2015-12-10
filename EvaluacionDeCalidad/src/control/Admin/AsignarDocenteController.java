@@ -26,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -79,21 +80,21 @@ public class AsignarDocenteController implements Initializable {
    
    ObservableList<ObservableList> tbasignatura;
     
-   TbgrupoxasignaturaxprofesorJpaController gpabd = new TbgrupoxasignaturaxprofesorJpaController(); 
-   Tbgrupoxasignaturaxprofesor gpa = new   Tbgrupoxasignaturaxprofesor();
-   TbasignaturaJpaController materiabd = new TbasignaturaJpaController();
-   TbgrupoJpaController grupobd = new TbgrupoJpaController();
-   Date fecha = new Date();
-   DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+    TbgrupoxasignaturaxprofesorJpaController gpabd = new TbgrupoxasignaturaxprofesorJpaController(); 
+    Tbgrupoxasignaturaxprofesor gpa = new   Tbgrupoxasignaturaxprofesor();
+    TbasignaturaJpaController materiabd = new TbasignaturaJpaController();
+    TbgrupoJpaController grupobd = new TbgrupoJpaController();
+    Date fecha = new Date();
+    DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
     @FXML
     private Button cargar1bt;
     @FXML
     private Button cargar2bt;
     @FXML
     private Button cargar3bt;
-    @FXML
-    private Button limpiarbt;
     Tbgrupoxasignaturaxprofesor profesor;
+    @FXML
+    private Label mensaje2;
     
     
     
@@ -157,7 +158,6 @@ public class AsignarDocenteController implements Initializable {
         
     }
     
-    @FXML
     public void limpiar(){
         modificarbt.setDisable(true);
         asignarbt.setDisable(false);
@@ -166,7 +166,7 @@ public class AsignarDocenteController implements Initializable {
         casignaturatf.setText("");
         cupotf.setText("");
         grupocb.setValue("");
-        
+        mensaje2.setVisible(false);
     }
      
     @FXML
@@ -388,15 +388,27 @@ public class AsignarDocenteController implements Initializable {
             TypedQuery<Tbgrupo> query3 = em.createNamedQuery("Tbgrupo.findByIdentificacion", Tbgrupo.class);
             grupo = query3.setParameter("identificacion", grupo.getIdentificacion()).getSingleResult();
             em.close();
-            
             Tbgrupoxasignaturaxprofesor asignard = new Tbgrupoxasignaturaxprofesor();
             TbgrupoxasignaturaxprofesorJpaController asignardbd = new TbgrupoxasignaturaxprofesorJpaController();
             asignard.setCedula(docente);
             asignard.setIdasignatura(asignatura);
             asignard.setIdgrupo(grupo);
             asignard.setCupo(Integer.parseInt(cupotf.getText()));
-            asignardbd.create(asignard);
-            cargarDatosTabla();
+            boolean crear = true;
+            for(int i=0;i<results.size();i++){
+                if(results.get(i).getCedula().getCedula().equals(docente.getCedula()) && results.get(i).getIdasignatura().getCodigo().equals(asignatura.getCodigo()) && results.get(i).getIdgrupo().getIdentificacion().equals(grupo.getIdentificacion())){
+                    crear = false;
+                }
+            }
+            
+            if(crear == true){
+                asignardbd.create(asignard);
+                cargarDatosTabla();
+                limpiar();
+            }else{
+                limpiar();
+                mensaje2.setVisible(true);
+            }
         }
     }
     

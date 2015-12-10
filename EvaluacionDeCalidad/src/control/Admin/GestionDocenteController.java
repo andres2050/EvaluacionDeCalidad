@@ -232,6 +232,7 @@ public class GestionDocenteController implements Initializable {
 
 
 
+   @FXML
     public void limpiar() {
         nombretf.setText("");
         apellidotf.setText("");
@@ -247,7 +248,6 @@ public class GestionDocenteController implements Initializable {
         codigotf.setDisable(false);
     }
    
-      @FXML
     public void limpiar (ActionEvent event) throws Exception {
         limpiar();
     }

@@ -12,14 +12,14 @@ package Validaciones;
 
 import javafx.scene.control.TextField;
 
-public class ValidarCorreo extends TextField  {
+public class ValidarTextonumerico extends TextField  {
     
-    public ValidarCorreo(){
+    public ValidarTextonumerico(){
     }
     
     @Override
     public void replaceText(int i,int il,String string){
-    if(string.matches("^([0-9a-zA-Z]([_.w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-w]*[0-9a-zA-Z].)+([a-zA-Z]{2,9}.)+[a-zA-Z]{2,3})$")|| string.isEmpty()){
+    if(string.matches("[a-zA-Z0-9 *]+$")|| string.isEmpty()){
         super.replaceText(i, il, string);
        
     } 

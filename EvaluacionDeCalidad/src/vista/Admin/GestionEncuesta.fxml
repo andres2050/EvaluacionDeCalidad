@@ -44,8 +44,8 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField  fx:id="numerotf" layoutX="754.0" layoutY="147.0" prefHeight="25.0" prefWidth="73.0" />
-      <ValidarTexto fx:id="nombretf" layoutX="754.0" layoutY="179.0" prefHeight="10.0" prefWidth="160.0" />
+      <TextField fx:id="numerotf" layoutX="754.0" layoutY="147.0" prefHeight="25.0" prefWidth="160.0" />
+      <TextField fx:id="nombretf" layoutX="754.0" layoutY="179.0" prefHeight="10.0" prefWidth="160.0" />
       <Button fx:id="anadirbt" layoutX="475.0" layoutY="538.0" mnemonicParsing="false" onAction="#anadir" prefHeight="21.0" prefWidth="90.0" text="Añadir">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -66,5 +66,10 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label fx:id="mensaje2" layoutX="694.0" layoutY="491.0" text="El usuario ya existe" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

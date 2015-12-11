@@ -95,10 +95,6 @@ public class AsignarDocenteController implements Initializable {
     Tbgrupoxasignaturaxprofesor profesor;
     @FXML
     private Label mensaje2;
-    
-    
-    
-    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
